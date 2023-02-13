@@ -8,16 +8,12 @@ public class Client extends Person implements CalculateTheAmount, Comparable<Cli
         this.book = book;
     }
 
-    public Client(Book book, String cardType) {
-        this.book = book;
-        this.cardType = cardType;
-    }
 
 
-    public Client(String id, String name, int age, String phoneNumber, Book book, String cardType) {
+    public Client(String id, String name, int age, String phoneNumber, String cardType , Book book) {
         super(id, name, age, phoneNumber);
-        this.book = book;
         this.cardType = cardType;
+        this.book = book;
     }
 
     public Book getBook() {
