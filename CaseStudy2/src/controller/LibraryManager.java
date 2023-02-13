@@ -2,10 +2,10 @@ package controller;
 
 import model.Client;
 import model.Employee;
-import model.Person;
 import storage.ReadAndWrite;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 public class LibraryManager {
@@ -42,6 +42,14 @@ public class LibraryManager {
                 clientList.remove(client);
             }
         }
+        return clientList;
+    }
+    public List<Employee> sortEmployeeBySalary() {
+        Collections.sort(employeeList);
+        return employeeList;
+    }
+    public List<Client> sortClientByName() {
+        Collections.sort(clientList);
         return clientList;
     }
 }

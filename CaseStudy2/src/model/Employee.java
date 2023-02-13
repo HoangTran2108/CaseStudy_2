@@ -1,6 +1,6 @@
 package model;
 
-public class Employee extends Person implements CalculateTheAmount {
+public class Employee extends Person implements CalculateTheAmount, Comparable<Employee> {
     private double hardSalary;
     private double bonus;
     private double fine;
@@ -39,7 +39,7 @@ public class Employee extends Person implements CalculateTheAmount {
         this.fine = fine;
     }
     @Override
-    public double totalmoney() {
+    public double totalMoney() {
         return hardSalary + bonus - fine;
     }
 
@@ -49,8 +49,12 @@ public class Employee extends Person implements CalculateTheAmount {
                 "Tên: " + getName() +
                 ", tuổi: " + getAge() +
                 ", số điện thoại: " + getPhoneNumber() +
+                ", lương cứng: " + hardSalary +
                 ", tiền thưởng: " + bonus +
                 ", tiền phạt" + fine + "\n";
     }
-
+    @Override
+    public int compareTo(Employee o) {
+        return (int)(this.totalMoney()-o.totalMoney());
+    }
 }
