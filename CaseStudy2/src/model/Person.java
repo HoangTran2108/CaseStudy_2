@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public abstract class Person implements Serializable {
+public abstract class Person implements Serializable, Comparable<Person> {
     private String id;
     private  String name;
     private  int age;
@@ -49,5 +49,10 @@ public abstract class Person implements Serializable {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return (this.getName()).compareTo(o.getName());
     }
 }
