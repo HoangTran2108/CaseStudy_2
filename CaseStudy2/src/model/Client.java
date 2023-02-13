@@ -2,21 +2,22 @@ package model;
 
 public class Client extends Person implements CalculateTheAmount, Comparable<Client>{
     private Book book;
-    private int borrowedDays;
+    private String cardType;
 
     public Client(Book book) {
         this.book = book;
     }
 
-    public Client(Book book, int borrowedDays) {
+    public Client(Book book, String cardType) {
         this.book = book;
-        this.borrowedDays = borrowedDays;
+        this.cardType = cardType;
     }
 
-    public Client(String id, String name, int age, String phoneNumber, Book book, int borrowedDays) {
+
+    public Client(String id, String name, int age, String phoneNumber, Book book, String cardType) {
         super(id, name, age, phoneNumber);
         this.book = book;
-        this.borrowedDays = borrowedDays;
+        this.cardType = cardType;
     }
 
     public Book getBook() {
@@ -27,17 +28,27 @@ public class Client extends Person implements CalculateTheAmount, Comparable<Cli
         this.book = book;
     }
 
-    public int getBorrowedDays() {
-        return borrowedDays;
+    public String getCardType() {
+        return cardType;
     }
 
-    public void setBorrowedDays(int borrowedDays) {
-        this.borrowedDays = borrowedDays;
+    public void setCardType(String cardType) {
+        this.cardType = cardType;
     }
 
     @Override
     public double totalMoney() {
-        return this.borrowedDays*1000;
+        double totalMoney=0 ;
+        if(cardType.equals("A")){
+            totalMoney = 500000;
+        }
+        if(cardType.equals("B")){
+            totalMoney = 300000;
+        }
+        if(cardType.equals("C")){
+            totalMoney = 200000;
+        }
+        return totalMoney;
     }
     @Override
     public int compareTo(Client o) {
@@ -51,6 +62,6 @@ public class Client extends Person implements CalculateTheAmount, Comparable<Cli
                 ", tuổi: " + getAge() +
                 ", số điện thoại: " + getPhoneNumber() +
                 ", sách mượn: " + book +
-                ", số ngày mượn: " + borrowedDays + "\n";
+                ", số ngày mượn: " + cardType + "\n";
     }
 }
