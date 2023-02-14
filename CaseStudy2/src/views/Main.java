@@ -27,6 +27,7 @@ public class Main {
                     4. Sắp xếp thẻ theo tên và in
                     5. Tìm kiếm thẻ theo id
                     0. Thoát
+                    _________________________
                     """);
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
