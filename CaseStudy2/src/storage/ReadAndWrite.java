@@ -2,10 +2,8 @@ package storage;
 
 import model.Client;
 import model.Employee;
-import model.Person;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWrite {
@@ -30,38 +28,18 @@ public class ReadAndWrite {
         return true;
     }
 
-    public List<Client> readFileEmployee()  {
+    public List<Employee> readFileEmployee()  {
         File file = new File("employee.dat");
         InputStream inputStream;
         try {
             inputStream = new FileInputStream(file);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        ObjectInputStream objectInputStream = null;
-        try {
+            ObjectInputStream objectInputStream = null;
             objectInputStream = new ObjectInputStream(inputStream);
-        } catch (IOException e) {
+        }
+        catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        finally {
-            if (objectInputStream != null) {
-
-                List<Client> list;
-                try {
-                    list = (List<Client>) objectInputStream.readObject();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-                return list;
-            }
-            else {
-                return new ArrayList<>();
-            }
-        }
-
+        return null;
     }
     public boolean writeFileClient(List<Client> clients) throws IOException {
         File file = new File("client.dat");
@@ -78,32 +56,12 @@ public class ReadAndWrite {
         InputStream inputStream = null;
         try {
             inputStream = new FileInputStream(file);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        ObjectInputStream objectInputStream = null;
-        try {
+            ObjectInputStream objectInputStream = null;
             objectInputStream = new ObjectInputStream(inputStream);
-        } catch (IOException e) {
+        }
+            catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        finally {
-            if (objectInputStream != null) {
-
-                List<Client> list;
-                try {
-                    list = (List<Client>) objectInputStream.readObject();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-                return list;
-            }
-            else {
-                return new ArrayList<>();
-            }
-        }
-
+        return null;
     }
 }

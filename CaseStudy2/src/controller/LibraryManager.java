@@ -9,8 +9,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class LibraryManager {
-    List<Client>clientList;
-    List<Employee>employeeList;
+    List<Client>clientList = ReadAndWrite.getInstance().readFileClient();
+    List<Employee>employeeList = ReadAndWrite.getInstance().readFileEmployee();
 
     public LibraryManager() {
     }

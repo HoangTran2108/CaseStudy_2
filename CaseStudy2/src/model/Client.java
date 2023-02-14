@@ -1,27 +1,29 @@
 package model;
 
+import java.util.List;
+
 public class Client extends Person implements CalculateTheAmount, Comparable<Client>{
-    private Book book;
+    private List<Book> books;
     private String cardType;
 
-    public Client(Book book) {
-        this.book = book;
-    }
-
-
-
-    public Client(String id, String name, int age, String phoneNumber, String cardType , Book book) {
-        super(id, name, age, phoneNumber);
+    public Client(List<Book> books, String cardType) {
+        this.books = books;
         this.cardType = cardType;
-        this.book = book;
     }
 
-    public Book getBook() {
-        return book;
+    public Client(String id, String name, int age, String phoneNumber, String cardType, List<Book> books) {
+        super(id, name, age, phoneNumber);
+        this.books = books;
+        this.cardType = cardType;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     public String getCardType() {
@@ -57,7 +59,7 @@ public class Client extends Person implements CalculateTheAmount, Comparable<Cli
                 ", tên người mượn: " + getName() +
                 ", tuổi: " + getAge() +
                 ", số điện thoại: " + getPhoneNumber() +
-                ", sách mượn: " + book +
+                ", sách mượn: " + books +
                 ", số ngày mượn: " + cardType + "\n";
     }
 }
