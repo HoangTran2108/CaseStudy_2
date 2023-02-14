@@ -28,6 +28,15 @@ public class LibraryManager {
         clientList.add(client);
         ReadAndWrite.getInstance().writeFileClient(clientList);
     }
+    public List<Employee> editEmployeeById(String inputID, Employee employee) throws IOException {
+        for (int i =0; i < employeeList.size(); i++) {
+            if(inputID.equals(employee.getId())){
+                employeeList.set(i, employee);
+                ReadAndWrite.getInstance().writeFileEmployee(employeeList);
+            }
+        }
+        return employeeList;
+    }
     public List<Employee> removeEmployeeById(String inputID) throws IOException {
         for (Employee employee: employeeList) {
             if(inputID.equals(employee.getId())){

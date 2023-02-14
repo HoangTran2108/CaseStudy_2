@@ -18,14 +18,18 @@ public class ReadAndWrite {
         return instance;
     }
 
-    public boolean writeFileEmployee(List<Employee> employees) throws IOException {
-        File file = new File("employee.dat");
-        OutputStream os = new FileOutputStream(file);
-        ObjectOutputStream fos = new ObjectOutputStream(os);
-        fos.writeObject(employees);
-        fos.close();
-        os.close();
-        return true;
+    public void writeFileEmployee(List<Employee> employees){
+        try {
+            File file = new File("employee.dat");
+            OutputStream os = new FileOutputStream(file);
+            ObjectOutputStream fos = new ObjectOutputStream(os);
+            fos.writeObject(employees);
+            fos.close();
+            os.close();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public List<Employee> readFileEmployee()  {
@@ -41,14 +45,13 @@ public class ReadAndWrite {
         }
         return null;
     }
-    public boolean writeFileClient(List<Client> clients) throws IOException {
+    public void writeFileClient(List<Client> clients) throws IOException {
         File file = new File("client.dat");
         OutputStream os = new FileOutputStream(file);
         ObjectOutputStream fos = new ObjectOutputStream(os);
         fos.writeObject(clients);
         fos.close();
         os.close();
-        return true;
     }
 
     public List<Client> readFileClient()  {

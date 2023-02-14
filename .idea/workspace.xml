@@ -7,7 +7,6 @@
     <list default="true" id="925409e4-4a33-47d5-8702-70af79c32e6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/model/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/storage/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/storage/ReadAndWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/Main.java" afterDir="false" />
     </list>
@@ -50,7 +49,7 @@
       <updated>1676346729303</updated>
       <workItem from="1676346730438" duration="44000" />
       <workItem from="1676349428491" duration="515000" />
-      <workItem from="1676357649321" duration="3220000" />
+      <workItem from="1676357649321" duration="7935000" />
     </task>
     <servers />
   </component>

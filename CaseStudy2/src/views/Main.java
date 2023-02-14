@@ -112,7 +112,7 @@ public class Main {
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
                 case 1 -> libraryManager.addNewEmployee(addEmployee());
-
+                case 2 -> {}
                 case 3 -> deleteEmployee();
                 case 4 -> {
                     List<Client> clientList = ReadAndWrite.getInstance().readFileClient();
@@ -126,7 +126,7 @@ public class Main {
                         System.out.println(client);
                     }
                 }
-                case 6 -> libraryManager.searchClientById(String.valueOf(searchCard()));
+                case 6 -> libraryManager.searchEmployeeById(String.valueOf(searchEmployee()));
                 case 7 -> {}
                 case 8 -> {}
                 case 0 -> System.out.println("Hẹn gặp lại sau.");
@@ -163,7 +163,7 @@ public class Main {
         String id = input.nextLine();
         System.out.println(libraryManager.removeEmployeeById(id));
     }
-    public static Client searchCard() {
+    public static Client searchEmployee() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
         return libraryManager.searchClientById(id);
