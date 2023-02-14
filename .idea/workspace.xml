@@ -9,6 +9,10 @@
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/storage/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/storage/ReadAndWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.dat" beforeDir="false" afterPath="$PROJECT_DIR$/client.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/LibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/LibraryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/ReadAndWrite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/ReadAndWrite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/views/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/views/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +40,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.fileTypes",
     "vue.rearranger.settings.migration": "true"
   }
@@ -51,7 +56,7 @@
       <workItem from="1676346730438" duration="44000" />
       <workItem from="1676349428491" duration="515000" />
       <workItem from="1676357649321" duration="10743000" />
-      <workItem from="1676398087083" duration="7136000" />
+      <workItem from="1676398087083" duration="9250000" />
     </task>
     <servers />
   </component>

@@ -12,32 +12,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
+
     public static LibraryManager libraryManager = new LibraryManager();
     public static Scanner input = new Scanner(System.in);
-    public static List<Client>clientList;
-
-    static {
-        try {
-            clientList = ReadAndWrite.getInstance().readFileClient();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static List<Employee>employeeList;
-
-    static {
-        try {
-            employeeList = ReadAndWrite.getInstance().readFileEmployee();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static int checkInput;
     public static void main(String[] args) {
         do {
@@ -69,15 +47,9 @@ public class Main {
             switch (checkInput) {
                 case 1 -> libraryManager.addNewClient(addClient());
                 case 2 -> deleteCard();
-                case 3 -> {
-                    for (Client client: clientList) {
-                        System.out.println(client);
-                    }
-                }
+                case 3 -> libraryManager.displayClient();
                 case 4 -> { libraryManager.sortClientByName();
-                    for (Client client: clientList) {
-                        System.out.println(client);
-                    }
+                    libraryManager.displayClient();
                 }
                 case 5 -> libraryManager.searchClientById(String.valueOf(searchCard()));
                 case 0 -> System.out.println("Hẹn gặp lại sau.");
@@ -147,15 +119,9 @@ public class Main {
                 case 1 -> libraryManager.addNewEmployee(addEmployee());
                 case 2 -> editEmployee();
                 case 3 -> deleteEmployee();
-                case 4 -> {
-                    for (Employee employee: employeeList) {
-                        System.out.println(employee);
-                    }
-                }
+                case 4 -> libraryManager.displayEmployee();
                 case 5 -> { libraryManager.sortEmployeeBySalary();
-                    for (Employee employee: employeeList) {
-                        System.out.println(employee);
-                    }
+                    libraryManager.displayEmployee();
                 }
                 case 6 -> libraryManager.searchEmployeeById(String.valueOf(searchEmployee()));
                 case 7 -> libraryManager.totalSalary();

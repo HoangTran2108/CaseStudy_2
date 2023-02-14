@@ -14,8 +14,8 @@ public class LibraryManager {
     List<Employee>employeeList;
 
     public LibraryManager() {
-        clientList = new ArrayList<>();
-        employeeList = new ArrayList<>();
+        clientList = ReadAndWrite.getInstance().readFileClient();
+        employeeList = ReadAndWrite.getInstance().readFileEmployee();
     }
 
     public LibraryManager(List<Client> clientList, List<Employee> employeeList) {
@@ -70,6 +70,16 @@ public class LibraryManager {
         Collections.sort(clientList);
         ReadAndWrite.getInstance().writeFileClient(clientList);
         return clientList;
+    }
+    public void displayClient() {
+        for (Client client: clientList) {
+            System.out.println(client);
+        }
+    }
+    public void displayEmployee() {
+        for (Employee employee: employeeList) {
+            System.out.println(employee);
+        }
     }
     public String totalSalary(){
         StringBuilder stringBuilder = new StringBuilder();

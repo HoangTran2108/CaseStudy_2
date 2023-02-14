@@ -34,19 +34,23 @@ public class ReadAndWrite {
         }
     }
 
-    public List<Employee> readFileEmployee() throws IOException, ClassNotFoundException {
+    public List<Employee> readFileEmployee() {
         File file = new File("employee.dat");
-        List<Employee> employees;
-        InputStream inputStream;
+        List<Employee> employees = new ArrayList<>();
+        FileInputStream stream;
         try {
-            inputStream = new FileInputStream(file);
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
-            ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
-            employees = (List<Employee>) objectInputStream.readObject();
-            objectInputStream.close();
-            inputStream.close();
-        } catch (IOException | ClassNotFoundException e) {
+            stream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+        }
+        try {
+            BufferedInputStream bufInSt = new BufferedInputStream(stream);
+            ObjectInputStream ois = new ObjectInputStream(bufInSt);
+            employees = (List<Employee>) ois.readObject();
+            ois.close();
+            stream.close();
+        } catch (Exception ex) {
+            System.err.println("Không có dữ liệu");
         }
         return employees;
     }
@@ -64,19 +68,23 @@ public class ReadAndWrite {
         }
     }
 
-    public List<Client> readFileClient() throws IOException, ClassNotFoundException {
+    public List<Client> readFileClient() {
         File file = new File("client.dat");
-        List<Client> clients;
-        InputStream inputStream;
+        List<Client> clients = new ArrayList<>();
+        FileInputStream stream;
         try {
-            inputStream = new FileInputStream(file);
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
-            ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
-            clients = (List<Client>) objectInputStream.readObject();
-            objectInputStream.close();
-            inputStream.close();
-        } catch (IOException | ClassNotFoundException e) {
+            stream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
+        }
+        try {
+            BufferedInputStream bufInSt = new BufferedInputStream(stream);
+            ObjectInputStream ois = new ObjectInputStream(bufInSt);
+            clients = (List<Client>) ois.readObject();
+            ois.close();
+            stream.close();
+        } catch (Exception ex) {
+            System.err.println("Không có dữ liệu");
         }
         return clients;
     }
