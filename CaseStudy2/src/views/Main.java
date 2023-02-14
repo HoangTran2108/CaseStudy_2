@@ -14,11 +14,46 @@ import java.util.Scanner;
 public class Main {
     public static LibraryManager libraryManager = new LibraryManager();
     public static Scanner input = new Scanner(System.in);
+    public static List<Client>clientList;
+
+    static {
+        try {
+            clientList = ReadAndWrite.getInstance().readFileClient();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static List<Employee>employeeList;
+
+    static {
+        try {
+            employeeList = ReadAndWrite.getInstance().readFileEmployee();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static int checkInput;
     public static void main(String[] args) {
-
+        do {
+            System.out.println("""
+                    ________Mời chọn_______
+                    1. Nhân viên
+                    2. Quản lý
+                    """);
+            checkInput = Integer.parseInt(input.nextLine());
+            switch (checkInput) {
+                case 1 -> employee();
+                case 2 -> manager();
+            }
+        } while (checkInput !=0);
     }
-    public static void employee() throws IOException {
+    public static void employee() {
         do {
             System.out.println("""
                     ----------Menu----------
@@ -35,13 +70,11 @@ public class Main {
                 case 1 -> libraryManager.addNewClient(addClient());
                 case 2 -> deleteCard();
                 case 3 -> {
-                    List<Client> clientList = ReadAndWrite.getInstance().readFileClient();
                     for (Client client: clientList) {
                         System.out.println(client);
                     }
                 }
                 case 4 -> { libraryManager.sortClientByName();
-                    List<Client> clientList = ReadAndWrite.getInstance().readFileClient();
                     for (Client client: clientList) {
                         System.out.println(client);
                     }
@@ -84,17 +117,17 @@ public class Main {
         }
         return client;
     }
-    public static void deleteCard() throws IOException {
+    public static void deleteCard() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
-        System.out.println(libraryManager.removeClientById(id));;
+        libraryManager.removeClientById(id);
     }
     public static Client searchCard() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
         return libraryManager.searchClientById(id);
     }
-    public static void manager() throws IOException {
+    public static void manager() {
         do {
             System.out.println("""
                     ----------Menu----------
@@ -112,23 +145,21 @@ public class Main {
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
                 case 1 -> libraryManager.addNewEmployee(addEmployee());
-                case 2 -> {}
+                case 2 -> editEmployee();
                 case 3 -> deleteEmployee();
                 case 4 -> {
-                    List<Client> clientList = ReadAndWrite.getInstance().readFileClient();
-                    for (Client client: clientList) {
-                        System.out.println(client);
+                    for (Employee employee: employeeList) {
+                        System.out.println(employee);
                     }
                 }
-                case 5 -> { libraryManager.sortClientByName();
-                    List<Client> clientList = ReadAndWrite.getInstance().readFileClient();
-                    for (Client client: clientList) {
-                        System.out.println(client);
+                case 5 -> { libraryManager.sortEmployeeBySalary();
+                    for (Employee employee: employeeList) {
+                        System.out.println(employee);
                     }
                 }
                 case 6 -> libraryManager.searchEmployeeById(String.valueOf(searchEmployee()));
-                case 7 -> {}
-                case 8 -> {}
+                case 7 -> libraryManager.totalSalary();
+                case 8 -> libraryManager.totalRevenue();
                 case 0 -> System.out.println("Hẹn gặp lại sau.");
                 default -> System.out.println("Vui lòng nhập lại!");
             }
@@ -158,14 +189,36 @@ public class Main {
         }
         return null;
     }
-    public static void editEmployee() throws IOException {
+    public static void editEmployee() {
         System.out.println("Nhập id nhân viên muốn sửa:");
         String id = input.nextLine();
+        Employee employee = null;
+        try {
+            System.out.println("Nhập id mới:");
+            String newId = input.nextLine();
+            System.out.println("Nhập tên nhân viên mới:");
+            String name = input.nextLine();
+            System.out.println("Nhập lại tuổi:");
+            int age = Integer.parseInt(input.nextLine());
+            System.out.println("Nhập số điện thoại mới:");
+            String phoneNumber = input.nextLine();
+            System.out.println("Nhập lại lương cứng:");
+            double hardSalary = input.nextDouble();
+            System.out.println("Nhập lại số tiền thưởng:");
+            double bonus = input.nextDouble();
+            System.out.println("Nhập lại số tiền phạt:");
+            double fine = input.nextDouble();
+            employee = new Employee(newId, name, age, phoneNumber, hardSalary, bonus,fine);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        libraryManager.editEmployeeById(id, employee);
     }
-    public static void deleteEmployee() throws IOException {
+    public static void deleteEmployee() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
-        System.out.println(libraryManager.removeEmployeeById(id));
+        libraryManager.removeEmployeeById(id);
     }
     public static Client searchEmployee() {
         System.out.println("Nhập id muốn tìm:");

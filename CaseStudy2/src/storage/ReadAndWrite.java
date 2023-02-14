@@ -4,7 +4,9 @@ import model.Client;
 import model.Employee;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class ReadAndWrite {
 
@@ -19,58 +21,63 @@ public class ReadAndWrite {
     }
 
     public void writeFileEmployee(List<Employee> employees){
-        File file = new File("employee.dat");
         try {
+            File file = new File("employee.dat");
             OutputStream os = new FileOutputStream(file);
             ObjectOutputStream fos = new ObjectOutputStream(os);
             fos.writeObject(employees);
             fos.close();
             os.close();
         }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
+        catch (Exception e){
+            System.out.println("Lỗi");
         }
     }
 
-    public List<Employee> readFileEmployee()  {
+    public List<Employee> readFileEmployee() throws IOException, ClassNotFoundException {
         File file = new File("employee.dat");
+        List<Employee> employees;
+        InputStream inputStream;
         try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            ObjectInputStream ois = new ObjectInputStream(fileInputStream);
-            List<Employee> employees = (List<Employee>)ois.readObject();
-            ois.close();
-            fileInputStream.close();
-            return employees;
+            inputStream = new FileInputStream(file);
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+            ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
+            employees = (List<Employee>) objectInputStream.readObject();
+            objectInputStream.close();
+            inputStream.close();
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        return employees;
     }
-    public void writeFileClient(List<Client> clients) throws IOException {
-        File file = new File("client.dat");
-        OutputStream os;
+    public void writeFileClient(List<Client> clients) {
         try {
-            os = new FileOutputStream(file);
+            File file = new File("client.dat");
+            OutputStream os = new FileOutputStream(file);
             ObjectOutputStream fos = new ObjectOutputStream(os);
             fos.writeObject(clients);
             fos.close();
             os.close();
         }
         catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Lỗi");
         }
     }
 
-    public List<Client> readFileClient()  {
+    public List<Client> readFileClient() throws IOException, ClassNotFoundException {
         File file = new File("client.dat");
+        List<Client> clients;
+        InputStream inputStream;
         try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            ObjectInputStream ois = new ObjectInputStream(fileInputStream);
-            List<Client> clients = (List<Client>)ois.readObject();
-            ois.close();
-            fileInputStream.close();
-            return clients;
+            inputStream = new FileInputStream(file);
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+            ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
+            clients = (List<Client>) objectInputStream.readObject();
+            objectInputStream.close();
+            inputStream.close();
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        return clients;
     }
 }

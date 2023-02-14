@@ -5,14 +5,17 @@ import model.Employee;
 import storage.ReadAndWrite;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class LibraryManager {
-    List<Client>clientList = ReadAndWrite.getInstance().readFileClient();
-    List<Employee>employeeList = ReadAndWrite.getInstance().readFileEmployee();
+    List<Client>clientList;
+    List<Employee>employeeList;
 
     public LibraryManager() {
+        clientList = new ArrayList<>();
+        employeeList = new ArrayList<>();
     }
 
     public LibraryManager(List<Client> clientList, List<Employee> employeeList) {
@@ -20,47 +23,50 @@ public class LibraryManager {
         this.employeeList = employeeList;
     }
 
-    public void addNewEmployee(Employee employee) throws IOException {
+    public void addNewEmployee(Employee employee) {
         employeeList.add(employee);
         ReadAndWrite.getInstance().writeFileEmployee(employeeList);
     }
-    public void addNewClient(Client client) throws IOException {
+    public void addNewClient(Client client) {
         clientList.add(client);
         ReadAndWrite.getInstance().writeFileClient(clientList);
     }
-    public List<Employee> editEmployeeById(String inputID, Employee employee) throws IOException {
+    public void editEmployeeById(String inputID, Employee employee) {
         for (int i =0; i < employeeList.size(); i++) {
             if(inputID.equals(employee.getId())){
                 employeeList.set(i, employee);
-                ReadAndWrite.getInstance().writeFileEmployee(employeeList);
+            } else {
+                System.out.println("Không tìm thấy id vừa nhập");
             }
         }
-        return employeeList;
+        ReadAndWrite.getInstance().writeFileEmployee(employeeList);
     }
-    public List<Employee> removeEmployeeById(String inputID) {
+    public void removeEmployeeById(String inputID) {
         for (Employee employee: employeeList) {
             if(inputID.equals(employee.getId())){
                 employeeList.remove(employee);
-                ReadAndWrite.getInstance().writeFileEmployee(employeeList);
+            } else {
+                System.out.println("Không tìm thấy id vừa nhập.");
             }
         }
-        return employeeList;
+        ReadAndWrite.getInstance().writeFileEmployee(employeeList);
     }
-    public List<Client> removeClientById(String inputID) throws IOException {
+    public void removeClientById(String inputID) {
         for (Client client: clientList) {
             if(inputID.equals(client.getId())){
                 clientList.remove(client);
-                ReadAndWrite.getInstance().writeFileClient(clientList);
+            } else {
+                System.out.println("Không tìm thấy id vừa nhập.");
             }
         }
-        return clientList;
+        ReadAndWrite.getInstance().writeFileClient(clientList);
     }
     public List<Employee> sortEmployeeBySalary(){
         Collections.sort(employeeList);
         ReadAndWrite.getInstance().writeFileEmployee(employeeList);
         return employeeList;
     }
-    public List<Client> sortClientByName() throws IOException {
+    public List<Client> sortClientByName() {
         Collections.sort(clientList);
         ReadAndWrite.getInstance().writeFileClient(clientList);
         return clientList;
