@@ -37,7 +37,7 @@ public class LibraryManager {
         }
         return employeeList;
     }
-    public List<Employee> removeEmployeeById(String inputID) throws IOException {
+    public List<Employee> removeEmployeeById(String inputID) {
         for (Employee employee: employeeList) {
             if(inputID.equals(employee.getId())){
                 employeeList.remove(employee);
@@ -55,7 +55,7 @@ public class LibraryManager {
         }
         return clientList;
     }
-    public List<Employee> sortEmployeeBySalary() throws IOException {
+    public List<Employee> sortEmployeeBySalary(){
         Collections.sort(employeeList);
         ReadAndWrite.getInstance().writeFileEmployee(employeeList);
         return employeeList;

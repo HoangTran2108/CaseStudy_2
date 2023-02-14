@@ -158,6 +158,10 @@ public class Main {
         }
         return null;
     }
+    public static void editEmployee() throws IOException {
+        System.out.println("Nhập id nhân viên muốn sửa:");
+        String id = input.nextLine();
+    }
     public static void deleteEmployee() throws IOException {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
