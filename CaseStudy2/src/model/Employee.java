@@ -1,6 +1,8 @@
 package model;
 
-public class Employee extends Person implements CalculateTheAmount, Comparable<Employee> {
+import java.io.Serializable;
+
+public class Employee extends Person implements CalculateTheAmount, Comparable<Employee>, Serializable {
     private double hardSalary;
     private double bonus;
     private double fine;
@@ -45,8 +47,8 @@ public class Employee extends Person implements CalculateTheAmount, Comparable<E
 
     @Override
     public String toString() {
-        return "Nhân viên: " + "id" + getId() +
-                "Tên: " + getName() +
+        return "Nhân viên: " + "id: " + getId() +
+                ", tên: " + getName() +
                 ", tuổi: " + getAge() +
                 ", số điện thoại: " + getPhoneNumber() +
                 ", lương cứng: " + hardSalary +

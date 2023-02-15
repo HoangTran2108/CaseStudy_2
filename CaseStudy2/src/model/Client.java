@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Client extends Person implements CalculateTheAmount, Comparable<Client>{
+public class Client extends Person implements CalculateTheAmount, Comparable<Client>,Serializable {
     private List<Book> books;
     private String cardType;
 

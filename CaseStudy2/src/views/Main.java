@@ -87,7 +87,8 @@ public class Main {
     public static Client searchCard() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
-        return libraryManager.searchClientById(id);
+        libraryManager.searchClientById(id);
+        return null;
     }
     public static void manager() {
         do {
@@ -115,7 +116,7 @@ public class Main {
                     libraryManager.displayEmployee();
                 }
                 case 6 -> libraryManager.searchEmployeeById(String.valueOf(searchEmployee()));
-                case 7 -> libraryManager.totalSalary();
+                case 7 -> System.out.println(libraryManager.totalSalary());
                 case 8 -> libraryManager.totalRevenue();
                 case 0 -> System.out.println("Hẹn gặp lại sau.");
                 default -> System.out.println("Vui lòng nhập lại!");
@@ -168,7 +169,8 @@ public class Main {
     public static Client searchEmployee() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
-        return libraryManager.searchClientById(id);
+        libraryManager.searchClientById(id);
+        return null;
     }
 
 }

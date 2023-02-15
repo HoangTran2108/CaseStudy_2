@@ -33,6 +33,7 @@ public class LibraryManager {
         for (int i =0; i < employeeList.size(); i++) {
             if(inputID.equals(employee.getId())){
                 employeeList.set(i, employee);
+                break;
             } else {
                 System.out.println("Không tìm thấy id vừa nhập");
             }
@@ -43,6 +44,7 @@ public class LibraryManager {
         for (Employee employee: employeeList) {
             if(inputID.equals(employee.getId())){
                 employeeList.remove(employee);
+                break;
             } else {
                 System.out.println("Không tìm thấy id vừa nhập.");
             }
@@ -53,6 +55,7 @@ public class LibraryManager {
         for (Client client: clientList) {
             if(inputID.equals(client.getId())){
                 clientList.remove(client);
+                break;
             } else {
                 System.out.println("Không tìm thấy id vừa nhập.");
             }
@@ -85,7 +88,7 @@ public class LibraryManager {
         for (Employee employee: employeeList) {
             sumSalary += employee.totalMoney();
         }
-        stringBuilder.append("Tổng tiền phải trả cho nhân viên là: ").append(sumSalary);
+        stringBuilder.append("Tổng tiền phải trả cho tất cả nhân viên là: ").append(sumSalary);
         return stringBuilder.toString();
     }
     public String totalRevenue(){
@@ -97,21 +100,19 @@ public class LibraryManager {
         stringBuilder.append("Tổng tiền dự kiến thu được từ phiếu mượn sách: ").append(sumRevenue);
         return stringBuilder.toString();
     }
-    public Employee searchEmployeeById(String inputID){
+    public void searchEmployeeById(String inputID){
         for (Employee employee: employeeList) {
             if(inputID.equals(employee.getId())){
-                return employee;
+                System.out.println(employee);
             }
         }
-        return null;
     }
-    public Client searchClientById(String inputID){
+    public void searchClientById(String inputID){
         for (Client client: clientList) {
             if(inputID.equals(client.getId())){
-                return client;
+                System.out.println(client);
             }
         }
-        return null;
     }
 
 }
