@@ -1,6 +1,7 @@
 package views;
 
 import controller.LibraryManager;
+import controller.LoginManager;
 import model.Book;
 import model.Client;
 import model.Employee;
@@ -11,19 +12,26 @@ import java.util.Scanner;
 
 public class Main {
     public static LibraryManager libraryManager = new LibraryManager();
+    public static LoginManager loginManager = new LoginManager();
     public static Scanner input = new Scanner(System.in);
     public static int checkInput;
     public static void main(String[] args) {
+        loginManager.login();
         do {
             System.out.println("""
                     ________Mời chọn_______
                     1. Nhân viên
                     2. Quản lý
+                    0. Thoát
                     """);
             checkInput = Integer.parseInt(input.nextLine());
             switch (checkInput) {
                 case 1 -> employee();
-                case 2 -> manager();
+                case 2 -> {
+                    loginManager.loginManager();
+                    manager();
+                }
+                case 0 -> System.out.println("Hẹn gặp lại");
             }
         } while (checkInput !=0);
     }
