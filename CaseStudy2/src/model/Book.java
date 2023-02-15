@@ -44,6 +44,6 @@ public class Book implements Serializable {
     public String toString() {
         return  "tên sách: " + nameBook +
                 ", tác giả: " + author +
-                ", thể loại: " + category;
+                ", thể loại: " + category + "\n";
     }
 }

@@ -7,12 +7,11 @@
     <list default="true" id="925409e4-4a33-47d5-8702-70af79c32e6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/model/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.dat" beforeDir="false" afterPath="$PROJECT_DIR$/client.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee.dat" beforeDir="false" afterPath="$PROJECT_DIR$/employee.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/LibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/LibraryManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/model/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/model/Employee.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/views/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/views/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +62,7 @@
       <workItem from="1676427317318" duration="2366000" />
       <workItem from="1676436195792" duration="14761000" />
       <workItem from="1676459744646" duration="73000" />
-      <workItem from="1676472976194" duration="469000" />
+      <workItem from="1676472976194" duration="3431000" />
     </task>
     <servers />
   </component>

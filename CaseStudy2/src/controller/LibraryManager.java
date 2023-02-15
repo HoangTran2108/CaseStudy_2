@@ -32,7 +32,7 @@ public class LibraryManager {
     public void editEmployeeById(String inputID, Employee employee) {
         for (int i =0; i < employeeList.size(); i++) {
             if(inputID.equals(employeeList.get(i).getId())){
-                employeeList.set(i, employeeList.get(i));
+                employeeList.set(i, employee);
                 break;
             } else {
                 System.out.println("Không tìm thấy id vừa nhập");

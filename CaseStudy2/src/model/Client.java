@@ -56,11 +56,12 @@ public class Client extends Person implements CalculateTheAmount, Comparable<Cli
 
     @Override
     public String toString() {
-        return "Thẻ mượn: " + "id: " + getId() +
-                ", tên người mượn: " + getName() +
+        return "Thẻ hội viên " + "id: " + getId() +
+                ", tên hội viên: " + getName() +
                 ", tuổi: " + getAge() +
                 ", số điện thoại: " + getPhoneNumber() +
-                ", sách mượn: " + books +
-                ", số ngày mượn: " + cardType + "\n";
+                ", Loại thẻ: " + cardType + "\n" +
+                "Sách mượn: " + "\n" +
+                books + "\n";
     }
 }

@@ -169,7 +169,7 @@ public class Main {
     public static Client searchEmployee() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
-        libraryManager.searchClientById(id);
+        libraryManager.searchEmployeeById(id);
         return null;
     }
 
