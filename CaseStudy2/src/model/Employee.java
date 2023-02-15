@@ -47,13 +47,13 @@ public class Employee extends Person implements CalculateTheAmount, Comparable<E
 
     @Override
     public String toString() {
-        return "Nhân viên: " + "id: " + getId() +
+        return "Nhân viên [ " + "id: " + getId() +
                 ", tên: " + getName() +
                 ", tuổi: " + getAge() +
                 ", số điện thoại: " + getPhoneNumber() +
                 ", lương cứng: " + hardSalary +
                 ", tiền thưởng: " + bonus +
-                ", tiền phạt" + fine + "\n";
+                ", tiền phạt" + fine + "]" + "\n";
     }
     @Override
     public int compareTo(Employee o) {

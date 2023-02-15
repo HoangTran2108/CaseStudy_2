@@ -31,8 +31,8 @@ public class LibraryManager {
     }
     public void editEmployeeById(String inputID, Employee employee) {
         for (int i =0; i < employeeList.size(); i++) {
-            if(inputID.equals(employee.getId())){
-                employeeList.set(i, employee);
+            if(inputID.equals(employeeList.get(i).getId())){
+                employeeList.set(i, employeeList.get(i));
                 break;
             } else {
                 System.out.println("Không tìm thấy id vừa nhập");

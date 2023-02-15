@@ -133,11 +133,11 @@ public class Main {
             System.out.println("Nhập số điện thoại:");
             String phoneNumber = input.nextLine();
             System.out.println("Nhập Lương cứng:");
-            double hardSalary = input.nextDouble();
+            double hardSalary = Double.parseDouble(input.nextLine());
             System.out.println("Nhập số tiền thưởng:");
-            double bonus = input.nextDouble();
+            double bonus = Double.parseDouble(input.nextLine());
             System.out.println("Nhập số tiền phạt:");
-            double fine = input.nextDouble();
+            double fine = Double.parseDouble(input.nextLine());
             return new Employee(id, name, age, phoneNumber, hardSalary, bonus,fine);
         }
     public static void editEmployee() {
@@ -153,11 +153,11 @@ public class Main {
             System.out.println("Nhập số điện thoại mới:");
             String phoneNumber = input.nextLine();
             System.out.println("Nhập lại lương cứng:");
-            double hardSalary = input.nextDouble();
+            double hardSalary = Double.parseDouble(input.nextLine());
             System.out.println("Nhập lại số tiền thưởng:");
-            double bonus = input.nextDouble();
+            double bonus = Double.parseDouble(input.nextLine());
             System.out.println("Nhập lại số tiền phạt:");
-            double fine = input.nextDouble();
+            double fine = Double.parseDouble(input.nextLine());
             employee = new Employee(newId, name, age, phoneNumber, hardSalary, bonus,fine);
             libraryManager.editEmployeeById(id, employee);
     }
