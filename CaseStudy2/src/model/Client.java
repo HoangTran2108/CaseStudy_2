@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Client extends Person implements CalculateTheAmount, Comparable<Client>,Serializable {
     private List<Book> books;
-    private String cardType;
+    private int cardType;
 
-    public Client(List<Book> books, String cardType) {
+    public Client(List<Book> books, int cardType) {
         this.books = books;
         this.cardType = cardType;
     }
 
-    public Client(String id, String name, int age, String phoneNumber, String cardType, List<Book> books) {
+    public Client(String id, String name, int age, String phoneNumber, int cardType, List<Book> books) {
         super(id, name, age, phoneNumber);
         this.books = books;
         this.cardType = cardType;
@@ -27,24 +27,24 @@ public class Client extends Person implements CalculateTheAmount, Comparable<Cli
         this.books = books;
     }
 
-    public String getCardType() {
+    public int getCardType() {
         return cardType;
     }
 
-    public void setCardType(String cardType) {
+    public void setCardType(int cardType) {
         this.cardType = cardType;
     }
 
     @Override
     public double totalMoney() {
         double totalMoney=0 ;
-        if(cardType.equals("A")){
+        if(cardType == 1){
             totalMoney = 500000;
         }
-        if(cardType.equals("B")){
+        if(cardType == 2){
             totalMoney = 300000;
         }
-        if(cardType.equals("C")){
+        if(cardType == 3){
             totalMoney = 200000;
         }
         return totalMoney;

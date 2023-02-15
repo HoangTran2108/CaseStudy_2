@@ -64,7 +64,11 @@ public class Main {
             System.out.println("Nhập số điện thoại:");
             String phoneNumber =input.nextLine();
             System.out.println("Nhập Loại thẻ:");
-            String cardType = input.nextLine();
+            int cardType;
+            do {
+                System.out.println("Loại thẻ gồm 1,2,3; vui lòng nhập đúng");
+                cardType = Integer.parseInt(input.nextLine());
+            }while (cardType !=1 && cardType !=2 && cardType !=3);
             System.out.println("Nhập số sách muốn thuê:");
             int numberBook = Integer.parseInt(input.nextLine());
             List<Book>books = new ArrayList<>();
@@ -117,7 +121,7 @@ public class Main {
                 }
                 case 6 -> libraryManager.searchEmployeeById(String.valueOf(searchEmployee()));
                 case 7 -> System.out.println(libraryManager.totalSalary());
-                case 8 -> libraryManager.totalRevenue();
+                case 8 -> System.out.println(libraryManager.totalRevenue());
                 case 0 -> System.out.println("Hẹn gặp lại sau.");
                 default -> System.out.println("Vui lòng nhập lại!");
             }
