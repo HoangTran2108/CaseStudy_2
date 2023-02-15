@@ -4,16 +4,12 @@ import controller.LibraryManager;
 import model.Book;
 import model.Client;
 import model.Employee;
-import storage.ReadAndWrite;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
-
     public static LibraryManager libraryManager = new LibraryManager();
     public static Scanner input = new Scanner(System.in);
     public static int checkInput;
@@ -48,7 +44,8 @@ public class Main {
                 case 1 -> libraryManager.addNewClient(addClient());
                 case 2 -> deleteCard();
                 case 3 -> libraryManager.displayClient();
-                case 4 -> { libraryManager.sortClientByName();
+                case 4 -> {
+                    libraryManager.sortClientByName();
                     libraryManager.displayClient();
                 }
                 case 5 -> libraryManager.searchClientById(String.valueOf(searchCard()));
@@ -58,8 +55,6 @@ public class Main {
         }while (checkInput !=0);
     }
     public static Client addClient() {
-        Client client = null;
-        try {
             System.out.println("Nhập id:");
             String id = input.nextLine();
             System.out.println("Nhập tên người dùng:");
@@ -82,12 +77,7 @@ public class Main {
                 String category = input.nextLine();
                 books.add(new Book(nameBook, nameAuthor, category));
             }
-            client = new Client(id, name, age, phoneNumber, cardType, books);
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return client;
+            return new Client(id, name, age, phoneNumber, cardType, books);
     }
     public static void deleteCard() {
         System.out.println("Nhập id muốn xóa:");
@@ -120,7 +110,8 @@ public class Main {
                 case 2 -> editEmployee();
                 case 3 -> deleteEmployee();
                 case 4 -> libraryManager.displayEmployee();
-                case 5 -> { libraryManager.sortEmployeeBySalary();
+                case 5 -> {
+                    libraryManager.sortEmployeeBySalary();
                     libraryManager.displayEmployee();
                 }
                 case 6 -> libraryManager.searchEmployeeById(String.valueOf(searchEmployee()));
@@ -132,8 +123,6 @@ public class Main {
         }while (checkInput !=0);
     }
     public static Employee addEmployee() {
-        Employee employee = null;
-        try {
             System.out.println("Nhập id:");
             String id = input.nextLine();
             System.out.println("Nhập tên nhân viên:");
@@ -148,18 +137,12 @@ public class Main {
             double bonus = input.nextDouble();
             System.out.println("Nhập số tiền phạt:");
             double fine = input.nextDouble();
-            employee = new Employee(id, name, age, phoneNumber, hardSalary, bonus,fine);
+            return new Employee(id, name, age, phoneNumber, hardSalary, bonus,fine);
         }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
     public static void editEmployee() {
         System.out.println("Nhập id nhân viên muốn sửa:");
         String id = input.nextLine();
-        Employee employee = null;
-        try {
+        Employee employee;
             System.out.println("Nhập id mới:");
             String newId = input.nextLine();
             System.out.println("Nhập tên nhân viên mới:");
@@ -175,11 +158,7 @@ public class Main {
             System.out.println("Nhập lại số tiền phạt:");
             double fine = input.nextDouble();
             employee = new Employee(newId, name, age, phoneNumber, hardSalary, bonus,fine);
-        }
-        catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        libraryManager.editEmployeeById(id, employee);
+            libraryManager.editEmployeeById(id, employee);
     }
     public static void deleteEmployee() {
         System.out.println("Nhập id muốn xóa:");
