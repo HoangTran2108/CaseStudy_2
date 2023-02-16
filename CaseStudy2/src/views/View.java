@@ -10,13 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
-    public static LibraryManager libraryManager = new LibraryManager();
-    public static LoginManager loginManager = new LoginManager();
-    public static Scanner input = new Scanner(System.in);
-    public static int checkInput;
-    public static void main(String[] args) {
-        loginManager.login();
+public class View {
+    private final LibraryManager libraryManager = new LibraryManager();
+    private final LoginManager loginManager = new LoginManager();
+    private final Scanner input = new Scanner(System.in);
+    private int checkInput;
+    public void menu() {
         do {
             System.out.println("""
                     ________Mời chọn_______
@@ -35,7 +34,7 @@ public class Main {
             }
         } while (checkInput !=0);
     }
-    public static void employee() {
+    public void employee() {
         do {
             System.out.println("""
                     ----------Menu----------
@@ -44,7 +43,7 @@ public class Main {
                     3. in danh sách
                     4. Sắp xếp thẻ theo tên và in
                     5. Tìm kiếm thẻ theo id
-                    0. Thoát
+                    0. Quay lại.
                     _________________________
                     """);
             checkInput = Integer.parseInt(input.nextLine());
@@ -57,52 +56,57 @@ public class Main {
                     libraryManager.displayClient();
                 }
                 case 5 -> libraryManager.searchClientById(String.valueOf(searchCard()));
-                case 0 -> System.out.println("Hẹn gặp lại sau.");
+                case 0 -> menu();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
         }while (checkInput !=0);
     }
-    public static Client addClient() {
-            System.out.println("Nhập id:");
-            String id = input.nextLine();
-            System.out.println("Nhập tên người dùng:");
-            String name = input.nextLine();
-            System.out.println("Nhập tuổi:");
-            int age = Integer.parseInt(input.nextLine());
-            System.out.println("Nhập số điện thoại:");
-            String phoneNumber =input.nextLine();
-            System.out.println("Nhập Loại thẻ:");
-            int cardType;
-            do {
-                System.out.println("Loại thẻ gồm 1,2,3; vui lòng nhập đúng");
-                cardType = Integer.parseInt(input.nextLine());
-            }while (cardType !=1 && cardType !=2 && cardType !=3);
-            System.out.println("Nhập số sách muốn thuê:");
-            int numberBook = Integer.parseInt(input.nextLine());
-            List<Book>books = new ArrayList<>();
-            for (int i = 0; i < numberBook; i++) {
-                System.out.println("Nhập tên sách:");
-                String nameBook = input.nextLine();
-                System.out.println("Nhập tên tác giả:");
-                String nameAuthor = input.nextLine();
-                System.out.println("Nhập thể loại:");
-                String category = input.nextLine();
-                books.add(new Book(nameBook, nameAuthor, category));
+    public Client addClient() {
+            try {
+                System.out.println("Nhập id:");
+                String id = input.nextLine();
+                System.out.println("Nhập tên người dùng:");
+                String name = input.nextLine();
+                System.out.println("Nhập tuổi:");
+                int age = Integer.parseInt(input.nextLine());
+                System.out.println("Nhập số điện thoại:");
+                String phoneNumber =input.nextLine();
+                System.out.println("Nhập Loại thẻ:");
+                int cardType;
+                do {
+                    System.out.println("Loại thẻ gồm 1,2,3; vui lòng nhập đúng");
+                    cardType = Integer.parseInt(input.nextLine());
+                }while (cardType !=1 && cardType !=2 && cardType !=3);
+                System.out.println("Nhập số sách muốn thuê:");
+                int numberBook = Integer.parseInt(input.nextLine());
+                List<Book>books = new ArrayList<>();
+                for (int i = 0; i < numberBook; i++) {
+                    System.out.println("Nhập tên sách:");
+                    String nameBook = input.nextLine();
+                    System.out.println("Nhập tên tác giả:");
+                    String nameAuthor = input.nextLine();
+                    System.out.println("Nhập thể loại:");
+                    String category = input.nextLine();
+                    books.add(new Book(nameBook, nameAuthor, category));
+                }
+                return new Client(id, name, age, phoneNumber, cardType, books);
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
             }
-            return new Client(id, name, age, phoneNumber, cardType, books);
+            return null;
     }
-    public static void deleteCard() {
+    public void deleteCard() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
         libraryManager.removeClientById(id);
     }
-    public static Client searchCard() {
+    public Client searchCard() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
         libraryManager.searchClientById(id);
         return null;
     }
-    public static void manager() {
+    public void manager() {
         do {
             System.out.println("""
                     ----------Menu----------
@@ -114,7 +118,7 @@ public class Main {
                     6. Tìm kiếm nhân viên theo id
                     7. Xem tổng chi
                     8. Xem tổng thu
-                    0. Thoát
+                    0. Quay lại
                     _________________________
                     """);
             checkInput = Integer.parseInt(input.nextLine());
@@ -130,32 +134,38 @@ public class Main {
                 case 6 -> libraryManager.searchEmployeeById(String.valueOf(searchEmployee()));
                 case 7 -> System.out.println(libraryManager.totalSalary());
                 case 8 -> System.out.println(libraryManager.totalRevenue());
-                case 0 -> System.out.println("Hẹn gặp lại sau.");
+                case 0 -> menu();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
         }while (checkInput !=0);
     }
-    public static Employee addEmployee() {
-            System.out.println("Nhập id:");
-            String id = input.nextLine();
-            System.out.println("Nhập tên nhân viên:");
-            String name = input.nextLine();
-            System.out.println("Nhập tuổi:");
-            int age = Integer.parseInt(input.nextLine());
-            System.out.println("Nhập số điện thoại:");
-            String phoneNumber = input.nextLine();
-            System.out.println("Nhập Lương cứng:");
-            double hardSalary = Double.parseDouble(input.nextLine());
-            System.out.println("Nhập số tiền thưởng:");
-            double bonus = Double.parseDouble(input.nextLine());
-            System.out.println("Nhập số tiền phạt:");
-            double fine = Double.parseDouble(input.nextLine());
-            return new Employee(id, name, age, phoneNumber, hardSalary, bonus,fine);
+    public Employee addEmployee() {
+            try {
+                System.out.println("Nhập id:");
+                String id = input.nextLine();
+                System.out.println("Nhập tên nhân viên:");
+                String name = input.nextLine();
+                System.out.println("Nhập tuổi:");
+                int age = Integer.parseInt(input.nextLine());
+                System.out.println("Nhập số điện thoại:");
+                String phoneNumber = input.nextLine();
+                System.out.println("Nhập Lương cứng:");
+                double hardSalary = Double.parseDouble(input.nextLine());
+                System.out.println("Nhập số tiền thưởng:");
+                double bonus = Double.parseDouble(input.nextLine());
+                System.out.println("Nhập số tiền phạt:");
+                double fine = Double.parseDouble(input.nextLine());
+                return new Employee(id, name, age, phoneNumber, hardSalary, bonus,fine);
+            } catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+            return null;
         }
-    public static void editEmployee() {
-        System.out.println("Nhập id nhân viên muốn sửa:");
-        String id = input.nextLine();
-        Employee employee;
+    public void editEmployee() {
+        try {
+            System.out.println("Nhập id nhân viên muốn sửa:");
+            String id = input.nextLine();
+            Employee employee;
             System.out.println("Nhập id mới:");
             String newId = input.nextLine();
             System.out.println("Nhập tên nhân viên mới:");
@@ -172,13 +182,16 @@ public class Main {
             double fine = Double.parseDouble(input.nextLine());
             employee = new Employee(newId, name, age, phoneNumber, hardSalary, bonus,fine);
             libraryManager.editEmployeeById(id, employee);
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
-    public static void deleteEmployee() {
+    public void deleteEmployee() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
         libraryManager.removeEmployeeById(id);
     }
-    public static Client searchEmployee() {
+    public Client searchEmployee() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
         libraryManager.searchEmployeeById(id);
