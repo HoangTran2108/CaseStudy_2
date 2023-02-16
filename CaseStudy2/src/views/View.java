@@ -15,6 +15,14 @@ public class View {
     private final LoginManager loginManager = new LoginManager();
     private final Scanner input = new Scanner(System.in);
     private int checkInput;
+    public int checkInput(){
+        try{
+           return checkInput = Integer.parseInt(input.nextLine());
+        } catch (Exception e){
+            System.out.println("Nhập theo menu");
+        }
+        return -1;
+    }
     public void menu() {
         do {
             System.out.println("""
@@ -23,7 +31,7 @@ public class View {
                     2. Quản lý
                     0. Thoát
                     """);
-            checkInput = Integer.parseInt(input.nextLine());
+            checkInput = checkInput();
             switch (checkInput) {
                 case 1 -> employee();
                 case 2 -> {
@@ -31,6 +39,7 @@ public class View {
                     manager();
                 }
                 case 0 -> System.out.println("Hẹn gặp lại");
+                default -> System.out.println("Nhập lại");
             }
         } while (checkInput !=0);
     }
@@ -46,7 +55,7 @@ public class View {
                     0. Quay lại.
                     _________________________
                     """);
-            checkInput = Integer.parseInt(input.nextLine());
+            checkInput = checkInput();
             switch (checkInput) {
                 case 1 -> libraryManager.addNewClient(addClient());
                 case 2 -> deleteCard();
@@ -121,7 +130,7 @@ public class View {
                     0. Quay lại
                     _________________________
                     """);
-            checkInput = Integer.parseInt(input.nextLine());
+            checkInput = checkInput();
             switch (checkInput) {
                 case 1 -> libraryManager.addNewEmployee(addEmployee());
                 case 2 -> editEmployee();
