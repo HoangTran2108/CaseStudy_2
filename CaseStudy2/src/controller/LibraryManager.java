@@ -34,8 +34,6 @@ public class LibraryManager {
             if(inputID.equals(employeeList.get(i).getId())){
                 employeeList.set(i, employee);
                 break;
-            } else {
-                System.out.println("Không tìm thấy id vừa nhập");
             }
         }
         ReadAndWrite.getInstance().writeFileEmployee(employeeList);
@@ -45,8 +43,6 @@ public class LibraryManager {
             if(inputID.equals(employee.getId())){
                 employeeList.remove(employee);
                 break;
-            } else {
-                System.out.println("Không tìm thấy id vừa nhập.");
             }
         }
         ReadAndWrite.getInstance().writeFileEmployee(employeeList);
@@ -56,8 +52,6 @@ public class LibraryManager {
             if(inputID.equals(client.getId())){
                 clientList.remove(client);
                 break;
-            } else {
-                System.out.println("Không tìm thấy id vừa nhập.");
             }
         }
         ReadAndWrite.getInstance().writeFileClient(clientList);

@@ -1,5 +1,7 @@
 package views;
 
+import conCreteCommand.*;
+import controller.CommandManager;
 import controller.LibraryManager;
 import controller.LoginManager;
 import model.Book;
@@ -11,7 +13,23 @@ import java.util.List;
 import java.util.Scanner;
 
 public class View {
-    private final LibraryManager libraryManager = new LibraryManager();
+    LibraryManager libraryManager = new LibraryManager();
+    private AddNewClient addNewClient = new AddNewClient(libraryManager);
+    private AddNewEmployee addNewEmployee = new AddNewEmployee(libraryManager);
+    private DisplayClient displayClient = new DisplayClient(libraryManager);
+    private DisplayEmployee displayEmployee = new DisplayEmployee(libraryManager);
+    private EditEmployeeById editEmployeeById = new EditEmployeeById(libraryManager);
+    private RemoveClientById removeClientById = new RemoveClientById(libraryManager);
+    private RemoveEmployeeById removeEmployeeById = new RemoveEmployeeById(libraryManager);
+    private SearchClientById searchClientById = new SearchClientById(libraryManager);
+    private SearchEmployeeById searchEmployeeById = new SearchEmployeeById(libraryManager);
+    private SortClientByName sortClientByName = new SortClientByName(libraryManager);
+    private SortEmployeeBySalary sortEmployeeBySalary = new SortEmployeeBySalary(libraryManager);
+    private TotalRevenue totalRevenue = new TotalRevenue(libraryManager);
+    private TotalSalary totalSalary = new TotalSalary(libraryManager);
+    private final CommandManager commandManager = new CommandManager(addNewClient, addNewEmployee, displayClient, displayEmployee,
+            editEmployeeById, removeClientById, removeEmployeeById, searchClientById, searchEmployeeById, sortClientByName,
+            sortEmployeeBySalary, totalRevenue, totalSalary);
     private final LoginManager loginManager = new LoginManager();
     private final Scanner input = new Scanner(System.in);
     private int checkInput;
@@ -57,14 +75,14 @@ public class View {
                     """);
             checkInput = checkInput();
             switch (checkInput) {
-                case 1 -> libraryManager.addNewClient(addClient());
+                case 1 -> commandManager.addNewClient(addClient());
                 case 2 -> deleteCard();
-                case 3 -> libraryManager.displayClient();
+                case 3 -> commandManager.displayClient();
                 case 4 -> {
-                    libraryManager.sortClientByName();
-                    libraryManager.displayClient();
+                    commandManager.sortClientByName();
+                    commandManager.displayClient();
                 }
-                case 5 -> libraryManager.searchClientById(String.valueOf(searchCard()));
+                case 5 -> commandManager.searchClientById(String.valueOf(searchCard()));
                 case 0 -> menu();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
@@ -107,12 +125,12 @@ public class View {
     public void deleteCard() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
-        libraryManager.removeClientById(id);
+        commandManager.removeClientById(id);
     }
     public Client searchCard() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
-        libraryManager.searchClientById(id);
+        commandManager.searchClientById(id);
         return null;
     }
     public void manager() {
@@ -132,17 +150,17 @@ public class View {
                     """);
             checkInput = checkInput();
             switch (checkInput) {
-                case 1 -> libraryManager.addNewEmployee(addEmployee());
+                case 1 -> commandManager.addNewEmployee(addEmployee());
                 case 2 -> editEmployee();
                 case 3 -> deleteEmployee();
-                case 4 -> libraryManager.displayEmployee();
+                case 4 -> commandManager.displayEmployee();
                 case 5 -> {
-                    libraryManager.sortEmployeeBySalary();
-                    libraryManager.displayEmployee();
+                    commandManager.sortEmployeeBySalary();
+                    commandManager.displayEmployee();
                 }
-                case 6 -> libraryManager.searchEmployeeById(String.valueOf(searchEmployee()));
-                case 7 -> System.out.println(libraryManager.totalSalary());
-                case 8 -> System.out.println(libraryManager.totalRevenue());
+                case 6 -> commandManager.searchEmployeeById(String.valueOf(searchEmployee()));
+                case 7 -> System.out.println(commandManager.totalSalary());
+                case 8 -> System.out.println(commandManager.totalRevenue());
                 case 0 -> menu();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
@@ -190,7 +208,7 @@ public class View {
             System.out.println("Nhập lại số tiền phạt:");
             double fine = Double.parseDouble(input.nextLine());
             employee = new Employee(newId, name, age, phoneNumber, hardSalary, bonus,fine);
-            libraryManager.editEmployeeById(id, employee);
+            commandManager.editEmployeeById(id, employee);
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -198,12 +216,12 @@ public class View {
     public void deleteEmployee() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
-        libraryManager.removeEmployeeById(id);
+        commandManager.removeEmployeeById(id);
     }
     public Client searchEmployee() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
-        libraryManager.searchEmployeeById(id);
+        commandManager.searchEmployeeById(id);
         return null;
     }
 

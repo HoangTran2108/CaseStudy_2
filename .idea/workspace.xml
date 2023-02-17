@@ -5,23 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="925409e4-4a33-47d5-8702-70af79c32e6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandListClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandListEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/EditEmployeeById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveClientById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveEmployeeById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchClientById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchEmployeeById.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortClientByName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortEmployeeBySalary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalRevenue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalSalary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandVoid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandListClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandListClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandListEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandListEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandVoidWithParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/EditEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/EditEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveClientById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchClientById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortClientByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortClientByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortEmployeeBySalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortEmployeeBySalary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalRevenue.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalRevenue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalSalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalSalary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.dat" beforeDir="false" afterPath="$PROJECT_DIR$/client.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/employee.dat" beforeDir="false" afterPath="$PROJECT_DIR$/employee.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" afterDir="false" />
     </list>
@@ -89,21 +98,11 @@
       <workItem from="1676518851240" duration="1137000" />
       <workItem from="1676522547513" duration="2556000" />
       <workItem from="1676591165099" duration="1818000" />
+      <workItem from="1676615121215" duration="4240000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/CaseStudy2/src/views/View.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

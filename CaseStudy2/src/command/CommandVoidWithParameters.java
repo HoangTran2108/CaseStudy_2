@@ -1,5 +1,5 @@
 package command;
 
-public interface CommandSearch {
+public interface CommandVoidWithParameters {
     void execute(String inputID);
 }
