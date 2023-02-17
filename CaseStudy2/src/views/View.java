@@ -1,6 +1,6 @@
 package views;
 
-import conCreteCommand.*;
+import concreteCommand.*;
 import controller.CommandManager;
 import controller.LibraryManager;
 import controller.LoginManager;
@@ -33,6 +33,7 @@ public class View {
     private final LoginManager loginManager = new LoginManager();
     private final Scanner input = new Scanner(System.in);
     private int checkInput;
+
     public void menu() {
         do {
             System.out.println("""
@@ -51,8 +52,9 @@ public class View {
                 case 0 -> System.out.println("Hẹn gặp lại");
                 default -> System.out.println("Nhập lại");
             }
-        } while (checkInput !=0);
+        } while (checkInput != 0);
     }
+
     public void employee() {
         do {
             System.out.println("""
@@ -78,48 +80,52 @@ public class View {
                 case 0 -> menu();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
-        }while (checkInput !=0);
+        } while (checkInput != 0);
     }
+
     public Client addClient() {
-                System.out.println("Nhập id:");
-                String id = input.nextLine();
-                System.out.println("Nhập tên người dùng:");
-                String name = input.nextLine();
-                System.out.println("Nhập tuổi:");
-                int age = checkInputInt();
-                System.out.println("Nhập số điện thoại:");
-                String phoneNumber =input.nextLine();
-                System.out.println("Nhập Loại thẻ:");
-                int cardType;
-                do {
-                    System.out.println("Loại thẻ gồm 1,2,3; vui lòng nhập đúng");
-                    cardType = checkInputInt();
-                }while (cardType !=1 && cardType !=2 && cardType !=3);
-                System.out.println("Nhập số sách muốn thuê:");
-                int numberBook = checkInputInt();
-                List<Book>books = new ArrayList<>();
-                for (int i = 0; i < numberBook; i++) {
-                    System.out.println("Nhập tên sách:");
-                    String nameBook = input.nextLine();
-                    System.out.println("Nhập tên tác giả:");
-                    String nameAuthor = input.nextLine();
-                    System.out.println("Nhập thể loại:");
-                    String category = input.nextLine();
-                    books.add(new Book(nameBook, nameAuthor, category));
-                }
-                return new Client(id, name, age, phoneNumber, cardType, books);
+        System.out.println("Nhập id:");
+        String id = input.nextLine();
+        System.out.println("Nhập tên người dùng:");
+        String name = input.nextLine();
+        System.out.println("Nhập tuổi:");
+        int age = checkInputInt();
+        System.out.println("Nhập số điện thoại:");
+        String phoneNumber = input.nextLine();
+        System.out.println("Nhập Loại thẻ:");
+        int cardType;
+        do {
+            System.out.println("Loại thẻ gồm 1,2,3; vui lòng nhập đúng");
+            cardType = checkInputInt();
+        } while (cardType != 1 && cardType != 2 && cardType != 3);
+        System.out.println("Nhập số sách muốn thuê:");
+        int numberBook = checkInputInt();
+        List<Book> books = new ArrayList<>();
+        for (int i = 0; i < numberBook; i++) {
+            System.out.println("Nhập tên sách:");
+            String nameBook = input.nextLine();
+            System.out.println("Nhập tên tác giả:");
+            String nameAuthor = input.nextLine();
+            System.out.println("Nhập thể loại:");
+            String category = input.nextLine();
+            books.add(new Book(nameBook, nameAuthor, category));
+        }
+        return new Client(id, name, age, phoneNumber, cardType, books);
     }
+
     public void deleteCard() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
         commandManager.removeClientById(id);
     }
+
     public Client searchCard() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
         commandManager.searchClientById(id);
         return null;
     }
+
     public void manager() {
         do {
             System.out.println("""
@@ -151,69 +157,75 @@ public class View {
                 case 0 -> menu();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
-        }while (checkInput !=0);
+        } while (checkInput != 0);
     }
+
     public Employee addEmployee() {
-                System.out.println("Nhập id:");
-                String id = input.nextLine();
-                System.out.println("Nhập tên nhân viên:");
-                String name = input.nextLine();
-                System.out.println("Nhập tuổi:");
-                int age = checkInputInt();
-                System.out.println("Nhập số điện thoại:");
-                String phoneNumber = input.nextLine();
-                System.out.println("Nhập Lương cứng:");
-                double hardSalary = checkInputDouble();
-                System.out.println("Nhập số tiền thưởng:");
-                double bonus = checkInputDouble();
-                System.out.println("Nhập số tiền phạt:");
-                double fine = checkInputDouble();
-                return new Employee(id, name, age, phoneNumber, hardSalary, bonus,fine);
-        }
-    public void editEmployee() {
-            System.out.println("Nhập id nhân viên muốn sửa:");
-            String id = input.nextLine();
-            Employee employee;
-            System.out.println("Nhập tên nhân viên mới:");
-            String name = input.nextLine();
-            System.out.println("Nhập lại tuổi:");
-            int age = checkInputInt();
-            System.out.println("Nhập số điện thoại mới:");
-            String phoneNumber = input.nextLine();
-            System.out.println("Nhập lại lương cứng:");
-            double hardSalary = checkInputDouble();
-            System.out.println("Nhập lại số tiền thưởng:");
-            double bonus = checkInputDouble();
-            System.out.println("Nhập lại số tiền phạt:");
-            double fine = checkInputDouble();
-            employee = new Employee(id, name, age, phoneNumber, hardSalary, bonus,fine);
-            commandManager.editEmployeeById(id, employee);
+        System.out.println("Nhập id:");
+        String id = input.nextLine();
+        System.out.println("Nhập tên nhân viên:");
+        String name = input.nextLine();
+        System.out.println("Nhập tuổi:");
+        int age = checkInputInt();
+        System.out.println("Nhập số điện thoại:");
+        String phoneNumber = input.nextLine();
+        System.out.println("Nhập Lương cứng:");
+        double hardSalary = checkInputDouble();
+        System.out.println("Nhập số tiền thưởng:");
+        double bonus = checkInputDouble();
+        System.out.println("Nhập số tiền phạt:");
+        double fine = checkInputDouble();
+        return new Employee(id, name, age, phoneNumber, hardSalary, bonus, fine);
     }
+
+    public void editEmployee() {
+        System.out.println("Nhập id nhân viên muốn sửa:");
+        String id = input.nextLine();
+        Employee employee;
+        System.out.println("Nhập tên nhân viên mới:");
+        String name = input.nextLine();
+        System.out.println("Nhập lại tuổi:");
+        int age = checkInputInt();
+        System.out.println("Nhập số điện thoại mới:");
+        String phoneNumber = input.nextLine();
+        System.out.println("Nhập lại lương cứng:");
+        double hardSalary = checkInputDouble();
+        System.out.println("Nhập lại số tiền thưởng:");
+        double bonus = checkInputDouble();
+        System.out.println("Nhập lại số tiền phạt:");
+        double fine = checkInputDouble();
+        employee = new Employee(id, name, age, phoneNumber, hardSalary, bonus, fine);
+        commandManager.editEmployeeById(id, employee);
+    }
+
     public void deleteEmployee() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
         commandManager.removeEmployeeById(id);
     }
+
     public Client searchEmployee() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
         commandManager.searchEmployeeById(id);
         return null;
     }
+
     //Check_________________________________
     public int checkInputInt() {
         try {
             return Integer.parseInt(input.nextLine());
         } catch (Exception e) {
-            System.out.println("Vui lòng nhập số");
+            System.out.println("Vui lòng nhập số theo yêu cầu");
         }
         return -1;
     }
+
     public double checkInputDouble() {
         try {
             return Double.parseDouble(input.nextLine());
         } catch (Exception e) {
-            System.out.println("Vui lòng nhập số");
+            System.out.println("Vui lòng nhập số theo yêu cầu");
         }
         return -1;
     }

@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="925409e4-4a33-47d5-8702-70af79c32e6f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/EditEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/EditEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveClientById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchClientById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortClientByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortClientByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortEmployeeBySalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortEmployeeBySalary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalRevenue.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalRevenue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalSalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalSalary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +59,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -71,7 +87,8 @@
       <workItem from="1676518851240" duration="1137000" />
       <workItem from="1676522547513" duration="2556000" />
       <workItem from="1676591165099" duration="1818000" />
-      <workItem from="1676615121215" duration="5089000" />
+      <workItem from="1676615121215" duration="9703000" />
+      <workItem from="1676625318704" duration="812000" />
     </task>
     <servers />
   </component>

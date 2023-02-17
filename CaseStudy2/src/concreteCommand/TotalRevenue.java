@@ -1,20 +1,20 @@
-package conCreteCommand;
+package concreteCommand;
 
 import command.CommandString;
 import controller.LibraryManager;
 
-public class TotalSalary implements CommandString {
+public class TotalRevenue implements CommandString {
     LibraryManager libraryManager;
 
-    public TotalSalary() {
+    public TotalRevenue() {
     }
 
-    public TotalSalary(LibraryManager libraryManager) {
+    public TotalRevenue(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
     }
 
     @Override
     public String execute() {
-        return libraryManager.totalSalary();
+        return libraryManager.totalRevenue();
     }
 }

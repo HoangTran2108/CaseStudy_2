@@ -1,4 +1,4 @@
-package conCreteCommand;
+package concreteCommand;
 
 import command.CommandAddClient;
 import controller.LibraryManager;
