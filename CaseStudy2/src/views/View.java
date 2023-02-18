@@ -7,6 +7,7 @@ import controller.LoginManager;
 import model.Book;
 import model.Client;
 import model.Employee;
+import model.Login;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +38,11 @@ public class View {
     public void menu() {
         do {
             System.out.println("""
-                    ________Mời chọn_______
+                    --------Mời chọn------
                     1. Nhân viên
                     2. Quản lý
                     0. Thoát
+                    -----------------------
                     """);
             checkInput = checkInputInt();
             switch (checkInput) {
@@ -58,14 +60,14 @@ public class View {
     public void employee() {
         do {
             System.out.println("""
-                    ----------Menu----------
+                    -------------Menu-------------
                     1. Thêm thẻ
                     2. Xóa thẻ
                     3. in danh sách
                     4. Sắp xếp thẻ theo tên và in
                     5. Tìm kiếm thẻ theo id
                     0. Quay lại.
-                    _________________________
+                    ------------------------------
                     """);
             checkInput = checkInputInt();
             switch (checkInput) {
@@ -93,12 +95,8 @@ public class View {
         System.out.println("Nhập số điện thoại:");
         String phoneNumber = input.nextLine();
         System.out.println("Nhập Loại thẻ:");
-        int cardType;
-        do {
-            System.out.println("Loại thẻ gồm 1,2,3; vui lòng nhập đúng");
-            cardType = checkInputInt();
-        } while (cardType != 1 && cardType != 2 && cardType != 3);
-        System.out.println("Nhập số sách muốn thuê:");
+        int cardType = checkCardType();
+        System.out.println("Nhập số sách muốn mượn:");
         int numberBook = checkInputInt();
         List<Book> books = new ArrayList<>();
         for (int i = 0; i < numberBook; i++) {
@@ -124,11 +122,19 @@ public class View {
         String id = input.nextLine();
         System.out.println(commandManager.searchClientById(id));
     }
+    public int checkCardType(){
+        int cardType;
+        do {
+            System.out.println("Loại thẻ gồm 1,2,3; vui lòng nhập đúng");
+            cardType = checkInputInt();
+        } while (cardType != 1 && cardType != 2 && cardType != 3);
+        return cardType;
+    }
 
     public void manager() {
         do {
             System.out.println("""
-                    ----------Menu----------
+                    --------------Menu--------------
                     1. Thêm nhân viên
                     2. Sửa thông tin nhân viên
                     3. Xóa nhân viên
@@ -137,8 +143,10 @@ public class View {
                     6. Tìm kiếm nhân viên theo id
                     7. Xem tổng chi
                     8. Xem tổng thu
+                    9. Đổi mật khẩu chung
+                    10. Đổi mật khẩu quản lý
                     0. Quay lại
-                    _________________________
+                    --------------------------------
                     """);
             checkInput = checkInputInt();
             switch (checkInput) {
@@ -154,6 +162,8 @@ public class View {
                 case 7 -> System.out.println(commandManager.totalSalary());
                 case 8 -> System.out.println(commandManager.totalRevenue());
                 case 0 -> menu();
+                case 9 -> changeLogin();
+                case 10 -> changeLoginManager();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
         } while (checkInput != 0);
@@ -207,6 +217,22 @@ public class View {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
         System.out.println(commandManager.searchEmployeeById(id));
+    }
+    public void changeLogin(){
+        System.out.println("Nhập tên đăng nhập mới:");
+        String userName = input.nextLine();
+        System.out.println("Nhập mật khẩu mới:");
+        String password = input.nextLine();
+        Login login = new Login(userName, password);
+        loginManager.setLogins(login);
+    }
+    public void changeLoginManager() {
+        System.out.println("Nhập tên đăng nhập mới:");
+        String userName = input.nextLine();
+        System.out.println("Nhập mật khẩu mới:");
+        String password = input.nextLine();
+        Login login = new Login(userName, password);
+        loginManager.setLoginList(login);
     }
 
     //Check_________________________________
