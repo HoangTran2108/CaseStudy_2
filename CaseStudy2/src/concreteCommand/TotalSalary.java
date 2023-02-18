@@ -6,9 +6,6 @@ import controller.LibraryManager;
 public class TotalSalary implements CommandString {
     LibraryManager libraryManager;
 
-    public TotalSalary() {
-    }
-
     public TotalSalary(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
     }

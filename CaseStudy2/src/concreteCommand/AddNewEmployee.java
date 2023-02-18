@@ -7,9 +7,6 @@ import model.Employee;
 public class AddNewEmployee implements CommandAddEmployee {
     LibraryManager libraryManager;
 
-    public AddNewEmployee() {
-    }
-
     public AddNewEmployee(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
     }

@@ -4,8 +4,6 @@ import concreteCommand.*;
 import model.Client;
 import model.Employee;
 
-import java.util.List;
-
 public class CommandManager {
     AddNewClient addNewClient;
     AddNewEmployee addNewEmployee;
@@ -51,17 +49,17 @@ public class CommandManager {
     public void editEmployeeById(String inputID, Employee employee) {
         editEmployeeById.execute(inputID, employee);
     }
-    public void removeEmployeeById(String inputID) {
-        removeEmployeeById.execute(inputID);
+    public String removeEmployeeById(String inputID) {
+        return removeEmployeeById.execute(inputID);
     }
-    public void removeClientById(String inputID) {
-        removeClientById.execute(inputID);
+    public String removeClientById(String inputID) {
+        return removeClientById.execute(inputID);
     }
-    public List<Employee> sortEmployeeBySalary(){
-        return sortEmployeeBySalary.execute();
+    public void sortEmployeeBySalary(){
+        sortEmployeeBySalary.execute();
     }
-    public List<Client> sortClientByName() {
-        return sortClientByName.execute();
+    public void sortClientByName() {
+        sortClientByName.execute();
     }
     public void displayClient() {
         displayClient.execute();
@@ -75,10 +73,10 @@ public class CommandManager {
     public String totalRevenue(){
         return totalRevenue.execute();
     }
-    public void searchEmployeeById(String inputID){
-        searchEmployeeById.execute(inputID);
+    public String searchEmployeeById(String inputID){
+       return searchEmployeeById.execute(inputID);
     }
-    public void searchClientById(String inputID){
-        searchClientById.execute(inputID);
+    public String searchClientById(String inputID){
+        return searchClientById.execute(inputID);
     }
 }

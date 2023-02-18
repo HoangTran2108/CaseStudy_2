@@ -8,12 +8,19 @@ import java.util.Collections;
 import java.util.List;
 
 public class LibraryManager {
-    List<Client>clientList;
-    List<Employee>employeeList;
+    private final List<Client>clientList;
+    private final List<Employee>employeeList;
 
     public LibraryManager() {
         clientList = ReadAndWrite.getInstance().readFileClient();
         employeeList = ReadAndWrite.getInstance().readFileEmployee();
+    }
+
+    public List<Client> getClientList(){
+        return clientList;
+    }
+    public List<Employee> getEmployeeList(){
+        return employeeList;
     }
 
     public LibraryManager(List<Client> clientList, List<Employee> employeeList) {
@@ -38,33 +45,33 @@ public class LibraryManager {
         }
         ReadAndWrite.getInstance().writeFileEmployee(employeeList);
     }
-    public void removeEmployeeById(String inputID) {
+    public String removeEmployeeById(String inputID) {
         for (Employee employee: employeeList) {
             if(inputID.equals(employee.getId())){
                 employeeList.remove(employee);
-                break;
+                ReadAndWrite.getInstance().writeFileEmployee(employeeList);
+                return "Xóa thành công";
             }
         }
-        ReadAndWrite.getInstance().writeFileEmployee(employeeList);
+        return "Không tìm thấy id";
     }
-    public void removeClientById(String inputID) {
+    public String removeClientById(String inputID) {
         for (Client client: clientList) {
             if(inputID.equals(client.getId())){
                 clientList.remove(client);
-                break;
+                ReadAndWrite.getInstance().writeFileClient(clientList);
+                return "xóa thành công";
             }
         }
-        ReadAndWrite.getInstance().writeFileClient(clientList);
+        return "Không tìm thấy id";
     }
-    public List<Employee> sortEmployeeBySalary(){
+    public void sortEmployeeBySalary(){
         Collections.sort(employeeList);
         ReadAndWrite.getInstance().writeFileEmployee(employeeList);
-        return employeeList;
     }
-    public List<Client> sortClientByName() {
+    public void sortClientByName() {
         Collections.sort(clientList);
         ReadAndWrite.getInstance().writeFileClient(clientList);
-        return clientList;
     }
     public void displayClient() {
         for (Client client: clientList) {
@@ -94,19 +101,21 @@ public class LibraryManager {
         stringBuilder.append("Tổng tiền dự kiến thu được từ phiếu mượn sách: ").append(sumRevenue);
         return stringBuilder.toString();
     }
-    public void searchEmployeeById(String inputID){
+    public String searchEmployeeById(String inputID){
         for (Employee employee: employeeList) {
             if(inputID.equals(employee.getId())){
-                System.out.println(employee);
+                return employee.toString();
             }
         }
+        return "Không tìm thấy id";
     }
-    public void searchClientById(String inputID){
+    public String searchClientById(String inputID){
         for (Client client: clientList) {
             if(inputID.equals(client.getId())){
-                System.out.println(client);
+                return client.toString();
             }
         }
+        return "Không tìm thấy id";
     }
 
 }

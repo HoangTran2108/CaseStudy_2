@@ -7,9 +7,6 @@ import model.Client;
 public class AddNewClient implements CommandAddClient {
     LibraryManager libraryManager;
 
-    public AddNewClient() {
-    }
-
     public AddNewClient(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
     }

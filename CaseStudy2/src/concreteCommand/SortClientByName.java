@@ -1,23 +1,17 @@
 package concreteCommand;
 
-import command.CommandListClient;
+import command.CommandVoid;
 import controller.LibraryManager;
-import model.Client;
 
-import java.util.List;
-
-public class SortClientByName implements CommandListClient {
+public class SortClientByName implements CommandVoid {
     LibraryManager libraryManager;
-
-    public SortClientByName() {
-    }
 
     public SortClientByName(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
     }
 
     @Override
-    public List<Client> execute() {
-        return libraryManager.sortClientByName();
+    public void execute() {
+        libraryManager.sortClientByName();
     }
 }

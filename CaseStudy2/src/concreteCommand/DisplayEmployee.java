@@ -6,9 +6,6 @@ import controller.LibraryManager;
 public class DisplayEmployee implements CommandVoid {
     LibraryManager libraryManager;
 
-    public DisplayEmployee() {
-    }
-
     public DisplayEmployee(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
     }

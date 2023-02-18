@@ -53,7 +53,8 @@ public class Employee extends Person implements CalculateTheAmount, Comparable<E
                 ", số điện thoại: " + getPhoneNumber() +
                 ", lương cứng: " + hardSalary +
                 ", tiền thưởng: " + bonus +
-                ", tiền phạt" + fine + "]" + "\n";
+                ", tiền phạt: " + fine + "]" + "\n" +
+                "Lương thực lĩnh: " + totalMoney() + "\n";
     }
     @Override
     public int compareTo(Employee o) {

@@ -14,19 +14,19 @@ import java.util.Scanner;
 
 public class View {
     LibraryManager libraryManager = new LibraryManager();
-    private AddNewClient addNewClient = new AddNewClient(libraryManager);
-    private AddNewEmployee addNewEmployee = new AddNewEmployee(libraryManager);
-    private DisplayClient displayClient = new DisplayClient(libraryManager);
-    private DisplayEmployee displayEmployee = new DisplayEmployee(libraryManager);
-    private EditEmployeeById editEmployeeById = new EditEmployeeById(libraryManager);
-    private RemoveClientById removeClientById = new RemoveClientById(libraryManager);
-    private RemoveEmployeeById removeEmployeeById = new RemoveEmployeeById(libraryManager);
-    private SearchClientById searchClientById = new SearchClientById(libraryManager);
-    private SearchEmployeeById searchEmployeeById = new SearchEmployeeById(libraryManager);
-    private SortClientByName sortClientByName = new SortClientByName(libraryManager);
-    private SortEmployeeBySalary sortEmployeeBySalary = new SortEmployeeBySalary(libraryManager);
-    private TotalRevenue totalRevenue = new TotalRevenue(libraryManager);
-    private TotalSalary totalSalary = new TotalSalary(libraryManager);
+    private final AddNewClient addNewClient = new AddNewClient(libraryManager);
+    private final AddNewEmployee addNewEmployee = new AddNewEmployee(libraryManager);
+    private final DisplayClient displayClient = new DisplayClient(libraryManager);
+    private final DisplayEmployee displayEmployee = new DisplayEmployee(libraryManager);
+    private final EditEmployeeById editEmployeeById = new EditEmployeeById(libraryManager);
+    private final RemoveClientById removeClientById = new RemoveClientById(libraryManager);
+    private final RemoveEmployeeById removeEmployeeById = new RemoveEmployeeById(libraryManager);
+    private final SearchClientById searchClientById = new SearchClientById(libraryManager);
+    private final SearchEmployeeById searchEmployeeById = new SearchEmployeeById(libraryManager);
+    private final SortClientByName sortClientByName = new SortClientByName(libraryManager);
+    private final SortEmployeeBySalary sortEmployeeBySalary = new SortEmployeeBySalary(libraryManager);
+    private final TotalRevenue totalRevenue = new TotalRevenue(libraryManager);
+    private final TotalSalary totalSalary = new TotalSalary(libraryManager);
     private final CommandManager commandManager = new CommandManager(addNewClient, addNewEmployee, displayClient, displayEmployee,
             editEmployeeById, removeClientById, removeEmployeeById, searchClientById, searchEmployeeById, sortClientByName,
             sortEmployeeBySalary, totalRevenue, totalSalary);
@@ -76,7 +76,7 @@ public class View {
                     commandManager.sortClientByName();
                     commandManager.displayClient();
                 }
-                case 5 -> commandManager.searchClientById(String.valueOf(searchCard()));
+                case 5 -> searchCard();
                 case 0 -> menu();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
@@ -85,7 +85,7 @@ public class View {
 
     public Client addClient() {
         System.out.println("Nhập id:");
-        String id = input.nextLine();
+        String id = checkClientId();
         System.out.println("Nhập tên người dùng:");
         String name = input.nextLine();
         System.out.println("Nhập tuổi:");
@@ -116,14 +116,13 @@ public class View {
     public void deleteCard() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
-        commandManager.removeClientById(id);
+        System.out.println(commandManager.removeClientById(id));
     }
 
-    public Client searchCard() {
+    public void searchCard() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
-        commandManager.searchClientById(id);
-        return null;
+        System.out.println(commandManager.searchClientById(id));
     }
 
     public void manager() {
@@ -151,7 +150,7 @@ public class View {
                     commandManager.sortEmployeeBySalary();
                     commandManager.displayEmployee();
                 }
-                case 6 -> commandManager.searchEmployeeById(String.valueOf(searchEmployee()));
+                case 6 -> searchEmployee();
                 case 7 -> System.out.println(commandManager.totalSalary());
                 case 8 -> System.out.println(commandManager.totalRevenue());
                 case 0 -> menu();
@@ -162,7 +161,7 @@ public class View {
 
     public Employee addEmployee() {
         System.out.println("Nhập id:");
-        String id = input.nextLine();
+        String id = checkEmployeeId();
         System.out.println("Nhập tên nhân viên:");
         String name = input.nextLine();
         System.out.println("Nhập tuổi:");
@@ -201,14 +200,13 @@ public class View {
     public void deleteEmployee() {
         System.out.println("Nhập id muốn xóa:");
         String id = input.nextLine();
-        commandManager.removeEmployeeById(id);
+        System.out.println(commandManager.removeEmployeeById(id));
     }
 
-    public Client searchEmployee() {
+    public void searchEmployee() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
-        commandManager.searchEmployeeById(id);
-        return null;
+        System.out.println(commandManager.searchEmployeeById(id));
     }
 
     //Check_________________________________
@@ -228,6 +226,34 @@ public class View {
             System.out.println("Vui lòng nhập số theo yêu cầu");
         }
         return -1;
+    }
+    public String checkEmployeeId() {
+        String id = input.nextLine();
+        for (Employee o : libraryManager.getEmployeeList()) {
+            while (true) {
+                if (o.getId().equals(id)) {
+                    System.out.println("id bị trùng, vui lòng nhập lại");
+                    id = input.nextLine();
+                } else {
+                    break;
+                }
+            }
+        }
+        return id;
+    }
+    public String checkClientId() {
+        String id = input.nextLine();
+        for (Client o : libraryManager.getClientList()) {
+            while (true) {
+                if (o.getId().equals(id)) {
+                    System.out.println("id bị trùng, vui lòng nhập lại");
+                    id = input.nextLine();
+                } else {
+                    break;
+                }
+            }
+        }
+        return id;
     }
 
 }

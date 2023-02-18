@@ -6,21 +6,43 @@
   <component name="ChangeListManager">
     <list default="true" id="925409e4-4a33-47d5-8702-70af79c32e6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/AddNewEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/DisplayEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/EditEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/EditEmployeeById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveClientById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/RemoveEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveEmployeeById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchClientById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SearchEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchEmployeeById.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortClientByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortClientByName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/SortEmployeeBySalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortEmployeeBySalary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalRevenue.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalRevenue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/conCreteCommand/TotalSalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalSalary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandListClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandListEmployee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandVoidWithParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandVoidWithParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/EditEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/EditEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveClientById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchClientById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortClientByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortClientByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortEmployeeBySalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortEmployeeBySalary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalRevenue.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalRevenue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalSalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalSalary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/model/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.dat" beforeDir="false" afterPath="$PROJECT_DIR$/client.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee.dat" beforeDir="false" afterPath="$PROJECT_DIR$/employee.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/AddNewClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/AddNewClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/AddNewEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/AddNewEmployee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/DisplayClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/DisplayClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/DisplayEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/DisplayEmployee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/EditEmployeeById.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/EditEmployeeById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/RemoveClientById.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/RemoveClientById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/RemoveEmployeeById.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/RemoveEmployeeById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SearchClientById.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SearchClientById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SearchEmployeeById.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SearchEmployeeById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SortClientByName.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SortClientByName.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SortEmployeeBySalary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SortEmployeeBySalary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/TotalRevenue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/TotalRevenue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/TotalSalary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/TotalSalary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/CommandManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/CommandManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,22 +69,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/demo/CaseStudy_2demo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowRun.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/demo/CaseStudy_2demo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -88,7 +111,8 @@
       <workItem from="1676522547513" duration="2556000" />
       <workItem from="1676591165099" duration="1818000" />
       <workItem from="1676615121215" duration="9703000" />
-      <workItem from="1676625318704" duration="812000" />
+      <workItem from="1676625318704" duration="2779000" />
+      <workItem from="1676737084759" duration="9320000" />
     </task>
     <servers />
   </component>

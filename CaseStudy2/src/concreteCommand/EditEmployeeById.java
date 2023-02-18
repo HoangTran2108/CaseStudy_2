@@ -7,9 +7,6 @@ import model.Employee;
 public class EditEmployeeById implements CommandEdit {
     LibraryManager libraryManager;
 
-    public EditEmployeeById() {
-    }
-
     public EditEmployeeById(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
     }

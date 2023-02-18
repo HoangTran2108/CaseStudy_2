@@ -1,23 +1,17 @@
 package concreteCommand;
 
-import command.CommandListEmployee;
+import command.CommandVoid;
 import controller.LibraryManager;
-import model.Employee;
 
-import java.util.List;
-
-public class SortEmployeeBySalary implements CommandListEmployee {
+public class SortEmployeeBySalary implements CommandVoid {
     LibraryManager libraryManager;
-
-    public SortEmployeeBySalary() {
-    }
 
     public SortEmployeeBySalary(LibraryManager libraryManager) {
         this.libraryManager = libraryManager;
     }
 
     @Override
-    public List<Employee> execute() {
-        return libraryManager.sortEmployeeBySalary();
+    public void execute() {
+        libraryManager.sortEmployeeBySalary();
     }
 }
