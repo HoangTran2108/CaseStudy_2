@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="925409e4-4a33-47d5-8702-70af79c32e6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/LoginManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client.dat" beforeDir="false" afterPath="$PROJECT_DIR$/client.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginManager.dat" beforeDir="false" afterPath="$PROJECT_DIR$/loginManager.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/CommandManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/CommandManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee.dat" beforeDir="false" afterPath="$PROJECT_DIR$/employee.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +78,7 @@
       <workItem from="1676591165099" duration="1818000" />
       <workItem from="1676615121215" duration="9703000" />
       <workItem from="1676625318704" duration="2779000" />
-      <workItem from="1676737084759" duration="12855000" />
+      <workItem from="1676737084759" duration="13905000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,7 @@ import model.Login;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class View {
     LibraryManager libraryManager = new LibraryManager();
@@ -93,14 +94,14 @@ public class View {
         System.out.println("Nhập tuổi:");
         int age = checkInputInt();
         System.out.println("Nhập số điện thoại:");
-        String phoneNumber = input.nextLine();
+        String phoneNumber = checkInputPhoneNumber();
         System.out.println("Nhập Loại thẻ:");
         int cardType = checkCardType();
         System.out.println("Nhập số sách muốn mượn:");
         int numberBook = checkInputInt();
         List<Book> books = new ArrayList<>();
         for (int i = 0; i < numberBook; i++) {
-            System.out.println("Nhập tên sách:");
+            System.out.println("Nhập tên sách thứ " + i + ":");
             String nameBook = input.nextLine();
             System.out.println("Nhập tên tác giả:");
             String nameAuthor = input.nextLine();
@@ -177,7 +178,7 @@ public class View {
         System.out.println("Nhập tuổi:");
         int age = checkInputInt();
         System.out.println("Nhập số điện thoại:");
-        String phoneNumber = input.nextLine();
+        String phoneNumber = checkInputPhoneNumber();
         System.out.println("Nhập Lương cứng:");
         double hardSalary = checkInputDouble();
         System.out.println("Nhập số tiền thưởng:");
@@ -196,7 +197,7 @@ public class View {
         System.out.println("Nhập lại tuổi:");
         int age = checkInputInt();
         System.out.println("Nhập số điện thoại mới:");
-        String phoneNumber = input.nextLine();
+        String phoneNumber = checkInputPhoneNumber();
         System.out.println("Nhập lại lương cứng:");
         double hardSalary = checkInputDouble();
         System.out.println("Nhập lại số tiền thưởng:");
@@ -280,6 +281,19 @@ public class View {
             }
         }
         return id;
+    }
+    public String checkInputPhoneNumber() {
+        while (true) {
+            System.out.println("Nhập số điện thoại: ");
+            String phone = input.nextLine();
+            Pattern checkPhone = Pattern.compile("^0[1-9]([0-9]{8})$");
+            if (checkPhone.matcher(phone).find()) {
+                System.out.println("Số điện thoại hợp lệ");
+                return phone;
+            } else {
+                System.err.println("Số điện thoại không hợp lệ");
+            }
+        }
     }
 
 }
