@@ -1,5 +1,6 @@
 package storage;
 
+import model.Book;
 import model.Client;
 import model.Employee;
 import model.Login;
@@ -90,6 +91,7 @@ public class ReadAndWrite implements IReadWriteFile {
         }
         return clients;
     }
+
     @Override
     public void writeFileLogin(List<Login> logins) {
         try {
@@ -124,6 +126,7 @@ public class ReadAndWrite implements IReadWriteFile {
         }
         return logins;
     }
+
     @Override
     public void writeFileLoginManager(List<Login> logins) {
         try {
@@ -157,5 +160,40 @@ public class ReadAndWrite implements IReadWriteFile {
             System.err.println("Lỗi đọc file");
         }
         return logins;
+    }
+
+    @Override
+    public void writeFileBook(List<Book> books) {
+        try {
+            File file = new File("book.dat");
+            FileOutputStream os = new FileOutputStream(file);
+            ObjectOutputStream fos = new ObjectOutputStream(os);
+            fos.writeObject(books);
+            fos.close();
+            os.close();
+        } catch (Exception e) {
+            System.err.println("Lỗi ghi file");
+        }
+    }
+
+    @Override
+    public List<Book> readFileBook() {
+        File file = new File("book.dat");
+        List<Book> books = new ArrayList<>();
+        FileInputStream stream;
+        try {
+            stream = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            ObjectInputStream ois = new ObjectInputStream(stream);
+            books = (List<Book>) ois.readObject();
+            ois.close();
+            stream.close();
+        } catch (Exception e) {
+            System.err.println("Lỗi đọc file");
+        }
+        return books;
     }
 }

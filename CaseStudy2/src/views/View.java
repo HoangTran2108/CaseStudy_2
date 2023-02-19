@@ -18,20 +18,24 @@ public class View {
     LibraryManager libraryManager = new LibraryManager();
     private final AddNewClient addNewClient = new AddNewClient(libraryManager);
     private final AddNewEmployee addNewEmployee = new AddNewEmployee(libraryManager);
+    private final AddNewBook addNewBook = new AddNewBook(libraryManager);
     private final DisplayClient displayClient = new DisplayClient(libraryManager);
     private final DisplayEmployee displayEmployee = new DisplayEmployee(libraryManager);
+    private final DisplayBook displayBook = new DisplayBook(libraryManager);
     private final EditEmployeeById editEmployeeById = new EditEmployeeById(libraryManager);
     private final RemoveClientById removeClientById = new RemoveClientById(libraryManager);
     private final RemoveEmployeeById removeEmployeeById = new RemoveEmployeeById(libraryManager);
+    private final RemoveBookByName removeBookByName = new RemoveBookByName(libraryManager);
     private final SearchClientById searchClientById = new SearchClientById(libraryManager);
     private final SearchEmployeeById searchEmployeeById = new SearchEmployeeById(libraryManager);
+    private final SearchBookByName searchBookByName = new SearchBookByName(libraryManager);
     private final SortClientByName sortClientByName = new SortClientByName(libraryManager);
     private final SortEmployeeBySalary sortEmployeeBySalary = new SortEmployeeBySalary(libraryManager);
     private final TotalRevenue totalRevenue = new TotalRevenue(libraryManager);
     private final TotalSalary totalSalary = new TotalSalary(libraryManager);
-    private final CommandManager commandManager = new CommandManager(addNewClient, addNewEmployee, displayClient, displayEmployee,
-            editEmployeeById, removeClientById, removeEmployeeById, searchClientById, searchEmployeeById, sortClientByName,
-            sortEmployeeBySalary, totalRevenue, totalSalary);
+    private final CommandManager commandManager = new CommandManager(addNewClient, addNewEmployee, addNewBook,
+            displayClient, displayEmployee, displayBook, editEmployeeById, removeClientById, removeEmployeeById,
+            removeBookByName, searchClientById, searchEmployeeById, searchBookByName, sortClientByName, sortEmployeeBySalary, totalRevenue, totalSalary);
     private final LoginManager loginManager = new LoginManager();
     private final Scanner input = new Scanner(System.in);
     private int checkInput;
@@ -61,14 +65,17 @@ public class View {
     public void employee() {
         do {
             System.out.println("""
-                    -------------Menu-------------
-                    1. Thêm thẻ
+                    --------------------Menu--------------------
+                    1. Thêm thẻ mượn sách mới
                     2. Xóa thẻ
-                    3. in danh sách
+                    3. in danh sách thẻ mượn
                     4. Sắp xếp thẻ theo tên và in
                     5. Tìm kiếm thẻ theo id
+                    6. Thêm sách mới vào thư viện
+                    7. In danh sách sách đang lưu trong thư viện
+                    8. Xóa sách khỏi thư viện
                     0. Quay lại.
-                    ------------------------------
+                    ---------------------------------------------
                     """);
             checkInput = checkInputInt();
             switch (checkInput) {
@@ -80,6 +87,9 @@ public class View {
                     commandManager.displayClient();
                 }
                 case 5 -> searchCard();
+                case 6 -> commandManager.addNewBook(addBook());
+                case 7 -> commandManager.displayBook();
+                case 8 -> deleteBook();
                 case 0 -> menu();
                 default -> System.out.println("Vui lòng nhập lại!");
             }
@@ -93,7 +103,6 @@ public class View {
         String name = input.nextLine();
         System.out.println("Nhập tuổi:");
         int age = checkInputInt();
-        System.out.println("Nhập số điện thoại:");
         String phoneNumber = checkInputPhoneNumber();
         System.out.println("Nhập Loại thẻ:");
         int cardType = checkCardType();
@@ -101,15 +110,19 @@ public class View {
         int numberBook = checkInputInt();
         List<Book> books = new ArrayList<>();
         for (int i = 0; i < numberBook; i++) {
-            System.out.println("Nhập tên sách thứ " + i + ":");
-            String nameBook = input.nextLine();
-            System.out.println("Nhập tên tác giả:");
-            String nameAuthor = input.nextLine();
-            System.out.println("Nhập thể loại:");
-            String category = input.nextLine();
-            books.add(new Book(nameBook, nameAuthor, category));
+            books.add(searchBook());
         }
         return new Client(id, name, age, phoneNumber, cardType, books);
+    }
+
+    public Book addBook() {
+        System.out.println("Nhập tên sách:");
+        String name = input.nextLine();
+        System.out.println("Nhập tên tác giả:");
+        String author = input.nextLine();
+        System.out.println("Nhập thể loại:");
+        String category = input.nextLine();
+        return new Book(name, author, category);
     }
 
     public void deleteCard() {
@@ -118,12 +131,27 @@ public class View {
         System.out.println(commandManager.removeClientById(id));
     }
 
+    public void deleteBook() {
+        System.out.println("Nhập tên sách muốn xóa:");
+        String name = input.nextLine();
+        System.out.println(commandManager.removeBookByName(name));
+    }
+
     public void searchCard() {
         System.out.println("Nhập id muốn tìm:");
         String id = input.nextLine();
         System.out.println(commandManager.searchClientById(id));
     }
-    public int checkCardType(){
+
+    public Book searchBook() {
+        System.out.println("Nhập tên sách:");
+        String name = input.nextLine();
+        Book book = commandManager.searchBookByName(name);
+        commandManager.removeBookByName(name);
+        return book;
+    }
+
+    public int checkCardType() {
         int cardType;
         do {
             System.out.println("Loại thẻ gồm 1,2,3; vui lòng nhập đúng");
@@ -136,10 +164,10 @@ public class View {
         do {
             System.out.println("""
                     --------------Menu--------------
-                    1. Thêm nhân viên
+                    1. Thêm nhân viên mới
                     2. Sửa thông tin nhân viên
                     3. Xóa nhân viên
-                    4. in danh sách
+                    4. in danh sách nhân viên
                     5. Sắp xếp nhân viên theo lương
                     6. Tìm kiếm nhân viên theo id
                     7. Xem tổng chi
@@ -177,7 +205,6 @@ public class View {
         String name = input.nextLine();
         System.out.println("Nhập tuổi:");
         int age = checkInputInt();
-        System.out.println("Nhập số điện thoại:");
         String phoneNumber = checkInputPhoneNumber();
         System.out.println("Nhập Lương cứng:");
         double hardSalary = checkInputDouble();
@@ -219,7 +246,8 @@ public class View {
         String id = input.nextLine();
         System.out.println(commandManager.searchEmployeeById(id));
     }
-    public void changeLogin(){
+
+    public void changeLogin() {
         System.out.println("Nhập tên đăng nhập mới:");
         String userName = input.nextLine();
         System.out.println("Nhập mật khẩu mới:");
@@ -227,6 +255,7 @@ public class View {
         Login login = new Login(userName, password);
         loginManager.setLogins(login);
     }
+
     public void changeLoginManager() {
         System.out.println("Nhập tên đăng nhập mới:");
         String userName = input.nextLine();
@@ -242,8 +271,8 @@ public class View {
             return Integer.parseInt(input.nextLine());
         } catch (Exception e) {
             System.out.println("Vui lòng nhập số theo yêu cầu");
+            return checkInputInt();
         }
-        return -1;
     }
 
     public double checkInputDouble() {
@@ -251,9 +280,10 @@ public class View {
             return Double.parseDouble(input.nextLine());
         } catch (Exception e) {
             System.out.println("Vui lòng nhập số theo yêu cầu");
+            return checkInputDouble();
         }
-        return -1;
     }
+
     public String checkEmployeeId() {
         String id = input.nextLine();
         for (Employee o : libraryManager.getEmployeeList()) {
@@ -268,6 +298,7 @@ public class View {
         }
         return id;
     }
+
     public String checkClientId() {
         String id = input.nextLine();
         for (Client o : libraryManager.getClientList()) {
@@ -282,6 +313,7 @@ public class View {
         }
         return id;
     }
+
     public String checkInputPhoneNumber() {
         while (true) {
             System.out.println("Nhập số điện thoại: ");

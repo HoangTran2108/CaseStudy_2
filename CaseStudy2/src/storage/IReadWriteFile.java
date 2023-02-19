@@ -1,5 +1,6 @@
 package storage;
 
+import model.Book;
 import model.Client;
 import model.Employee;
 import model.Login;
@@ -7,12 +8,23 @@ import model.Login;
 import java.util.List;
 
 public interface IReadWriteFile {
-    void writeFileEmployee(List<Employee>employees);
-    List<Employee>readFileEmployee();
-    void writeFileClient(List<Client>clients);
-    List<Client>readFileClient();
-    void writeFileLogin(List<Login>logins);
-    List<Login>readFileLogin();
-    void writeFileLoginManager(List<Login>logins);
-    List<Login>readFileLoginManager();
+    void writeFileEmployee(List<Employee> employees);
+
+    List<Employee> readFileEmployee();
+
+    void writeFileClient(List<Client> clients);
+
+    List<Client> readFileClient();
+
+    void writeFileLogin(List<Login> logins);
+
+    List<Login> readFileLogin();
+
+    void writeFileLoginManager(List<Login> logins);
+
+    List<Login> readFileLoginManager();
+
+    void writeFileBook(List<Book> books);
+
+    List<Book> readFileBook();
 }

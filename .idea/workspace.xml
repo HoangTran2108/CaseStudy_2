@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="925409e4-4a33-47d5-8702-70af79c32e6f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandSearchBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchBookByName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/storage/IReadWriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/storage/IReadWriteFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/storage/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/storage/ReadAndWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client.dat" beforeDir="false" afterPath="$PROJECT_DIR$/client.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/employee.dat" beforeDir="false" afterPath="$PROJECT_DIR$/employee.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginManager.dat" beforeDir="false" afterPath="$PROJECT_DIR$/loginManager.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/CommandManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/CommandManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/LibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/LibraryManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/IReadWriteFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/IReadWriteFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/ReadAndWrite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/ReadAndWrite.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,23 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ToolWindowRun.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/demo/CaseStudy_2demo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/CaseStudy_2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,7 +91,24 @@
       <workItem from="1676591165099" duration="1818000" />
       <workItem from="1676615121215" duration="9703000" />
       <workItem from="1676625318704" duration="2779000" />
-      <workItem from="1676737084759" duration="13905000" />
+      <workItem from="1676737084759" duration="14097000" />
+      <workItem from="1676806360713" duration="123000" />
+      <workItem from="1676827983630" duration="237000" />
+      <workItem from="1676828255509" duration="13000" />
+      <workItem from="1676828327693" duration="17000" />
+      <workItem from="1676828373477" duration="26000" />
+      <workItem from="1676828436996" duration="29000" />
+      <workItem from="1676828500343" duration="14000" />
+      <workItem from="1676828534258" duration="45000" />
+      <workItem from="1676828605074" duration="24000" />
+      <workItem from="1676828664625" duration="70000" />
+      <workItem from="1676828776993" duration="50000" />
+      <workItem from="1676828852344" duration="38000" />
+      <workItem from="1676828931342" duration="28000" />
+      <workItem from="1676828998530" duration="152000" />
+      <workItem from="1676829167334" duration="618000" />
+      <workItem from="1676829805567" duration="1638000" />
+      <workItem from="1676831481333" duration="1618000" />
     </task>
     <servers />
   </component>
