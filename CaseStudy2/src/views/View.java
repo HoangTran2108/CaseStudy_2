@@ -1,6 +1,6 @@
 package views;
 
-import concreteCommand.*;
+import controller.concreteCommand.*;
 import controller.CommandManager;
 import controller.LibraryManager;
 import controller.LoginManager;
@@ -100,7 +100,7 @@ public class View {
         System.out.println("Nhập id:");
         String id = checkClientId();
         System.out.println("Nhập tên người dùng:");
-        String name = input.nextLine();
+        String name = string();
         System.out.println("Nhập tuổi:");
         int age = checkInputInt();
         String phoneNumber = checkInputPhoneNumber();
@@ -117,35 +117,35 @@ public class View {
 
     public Book addBook() {
         System.out.println("Nhập tên sách:");
-        String name = input.nextLine();
+        String name = string();
         System.out.println("Nhập tên tác giả:");
-        String author = input.nextLine();
+        String author = string();
         System.out.println("Nhập thể loại:");
-        String category = input.nextLine();
+        String category = string();
         return new Book(name, author, category);
     }
 
     public void deleteCard() {
         System.out.println("Nhập id muốn xóa:");
-        String id = input.nextLine();
+        String id = string();
         System.out.println(commandManager.removeClientById(id));
     }
 
     public void deleteBook() {
         System.out.println("Nhập tên sách muốn xóa:");
-        String name = input.nextLine();
+        String name = string();
         System.out.println(commandManager.removeBookByName(name));
     }
 
     public void searchCard() {
         System.out.println("Nhập id muốn tìm:");
-        String id = input.nextLine();
+        String id = string();
         System.out.println(commandManager.searchClientById(id));
     }
 
     public Book searchBook() {
         System.out.println("Nhập tên sách:");
-        String name = input.nextLine();
+        String name = string();
         Book book = commandManager.searchBookByName(name);
         commandManager.removeBookByName(name);
         return book;
@@ -202,7 +202,7 @@ public class View {
         System.out.println("Nhập id:");
         String id = checkEmployeeId();
         System.out.println("Nhập tên nhân viên:");
-        String name = input.nextLine();
+        String name = string();
         System.out.println("Nhập tuổi:");
         int age = checkInputInt();
         String phoneNumber = checkInputPhoneNumber();
@@ -216,11 +216,10 @@ public class View {
     }
 
     public void editEmployee() {
-        System.out.println("Nhập id nhân viên muốn sửa:");
-        String id = input.nextLine();
+        String id = checkEmployeeId1();
         Employee employee;
         System.out.println("Nhập tên nhân viên mới:");
-        String name = input.nextLine();
+        String name = string();
         System.out.println("Nhập lại tuổi:");
         int age = checkInputInt();
         System.out.println("Nhập số điện thoại mới:");
@@ -237,35 +236,45 @@ public class View {
 
     public void deleteEmployee() {
         System.out.println("Nhập id muốn xóa:");
-        String id = input.nextLine();
+        String id = string();
         System.out.println(commandManager.removeEmployeeById(id));
     }
 
     public void searchEmployee() {
         System.out.println("Nhập id muốn tìm:");
-        String id = input.nextLine();
+        String id = string();
         System.out.println(commandManager.searchEmployeeById(id));
     }
 
     public void changeLogin() {
         System.out.println("Nhập tên đăng nhập mới:");
-        String userName = input.nextLine();
+        String userName = string();
         System.out.println("Nhập mật khẩu mới:");
-        String password = input.nextLine();
+        String password = string();
         Login login = new Login(userName, password);
         loginManager.setLogins(login);
     }
 
     public void changeLoginManager() {
         System.out.println("Nhập tên đăng nhập mới:");
-        String userName = input.nextLine();
+        String userName = string();
         System.out.println("Nhập mật khẩu mới:");
-        String password = input.nextLine();
+        String password = string();
         Login login = new Login(userName, password);
         loginManager.setLoginList(login);
     }
 
     //Check_________________________________
+    public String string() {
+        while (true) {
+            try {
+                return input.nextLine();
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+        }
+
+    }
     public int checkInputInt() {
         try {
             return Integer.parseInt(input.nextLine());
@@ -285,7 +294,7 @@ public class View {
     }
 
     public String checkEmployeeId() {
-        String id = input.nextLine();
+        String id = string();
         for (Employee o : libraryManager.getEmployeeList()) {
             while (true) {
                 if (o.getId().equals(id)) {
@@ -298,9 +307,20 @@ public class View {
         }
         return id;
     }
+    public String checkEmployeeId1() {
+        System.out.println("Nhập id nhân viên muốn sửa: ");
+        String id = string();
+        for (int i = 0; i < libraryManager.getEmployeeList().size(); i++) {
+            if (id.equals(libraryManager.getEmployeeList().get(i).getId())) {
+                return id;
+            }
+        }
+        System.err.println("Không có id cân tìm");
+        return checkEmployeeId1();
+    }
 
     public String checkClientId() {
-        String id = input.nextLine();
+        String id = string();
         for (Client o : libraryManager.getClientList()) {
             while (true) {
                 if (o.getId().equals(id)) {
@@ -317,7 +337,7 @@ public class View {
     public String checkInputPhoneNumber() {
         while (true) {
             System.out.println("Nhập số điện thoại: ");
-            String phone = input.nextLine();
+            String phone = string();
             Pattern checkPhone = Pattern.compile("^0[1-9]([0-9]{8})$");
             if (checkPhone.matcher(phone).find()) {
                 System.out.println("Số điện thoại hợp lệ");

@@ -5,23 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="925409e4-4a33-47d5-8702-70af79c32e6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/command/CommandSearchBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchBookByName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/command/CommandAddBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/command/CommandAddClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandAddEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/command/CommandAddEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/command/CommandEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandSearchBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/command/CommandSearchBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandString.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/command/CommandString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandVoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/command/CommandVoid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/command/CommandVoidWithParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/command/CommandVoidWithParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/AddNewBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/AddNewClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/AddNewEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/AddNewEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/DisplayBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/DisplayClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/DisplayEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/DisplayEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/EditEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/EditEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveBookByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/RemoveBookByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/RemoveClientById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/RemoveEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/RemoveEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchBookByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/SearchBookByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchClientById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/SearchClientById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SearchEmployeeById.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/SearchEmployeeById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortClientByName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/SortClientByName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/SortEmployeeBySalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/SortEmployeeBySalary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalRevenue.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/TotalRevenue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/concreteCommand/TotalSalary.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/concreteCommand/TotalSalary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/controller/LibraryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/storage/IReadWriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/storage/IReadWriteFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CaseStudy2/src/storage/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/storage/ReadAndWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/CaseStudy2/src/views/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book.dat" beforeDir="false" afterPath="$PROJECT_DIR$/book.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client.dat" beforeDir="false" afterPath="$PROJECT_DIR$/client.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginManager.dat" beforeDir="false" afterPath="$PROJECT_DIR$/loginManager.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/employee.dat" beforeDir="false" afterPath="$PROJECT_DIR$/employee.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/command/CommandAddBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/command/CommandAddClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/command/CommandAddEmployee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/command/CommandEdit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/command/CommandSearchBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/command/CommandString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/command/CommandVoid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/command/CommandVoidWithParameters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/AddNewBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/AddNewClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/AddNewEmployee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/DisplayBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/DisplayClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/DisplayEmployee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/EditEmployeeById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/RemoveBookByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/RemoveClientById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/RemoveEmployeeById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SearchBookByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SearchClientById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SearchEmployeeById.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SortClientByName.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/SortEmployeeBySalary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/TotalRevenue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/conCreteCommand/TotalSalary.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/CommandManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/CommandManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/LibraryManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/controller/LibraryManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/IReadWriteFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/IReadWriteFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/ReadAndWrite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/storage/ReadAndWrite.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CaseStudy_2/views/View.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,6 +149,9 @@
       <workItem from="1676829167334" duration="618000" />
       <workItem from="1676829805567" duration="1638000" />
       <workItem from="1676831481333" duration="1618000" />
+      <workItem from="1676837287969" duration="1783000" />
+      <workItem from="1676854538840" duration="2817000" />
+      <workItem from="1676859624688" duration="5259000" />
     </task>
     <servers />
   </component>

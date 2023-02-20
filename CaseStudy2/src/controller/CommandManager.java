@@ -1,6 +1,6 @@
 package controller;
 
-import concreteCommand.*;
+import controller.concreteCommand.*;
 import model.Book;
 import model.Client;
 import model.Employee;
