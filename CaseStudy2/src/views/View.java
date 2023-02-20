@@ -222,7 +222,6 @@ public class View {
         String name = string();
         System.out.println("Nhập lại tuổi:");
         int age = checkInputInt();
-        System.out.println("Nhập số điện thoại mới:");
         String phoneNumber = checkInputPhoneNumber();
         System.out.println("Nhập lại lương cứng:");
         double hardSalary = checkInputDouble();
